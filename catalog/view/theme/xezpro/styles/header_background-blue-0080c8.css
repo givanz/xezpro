@@ -1,0 +1,77 @@
+body, #top 
+{
+    background: #0080c8;
+}
+    
+.heading h2, #logo a {
+    color: #fff;
+}
+
+#logo #text-logo a span {
+    color: #ffffff;
+}
+
+#logo #text_under_logo 
+{
+    color: #eee;
+}    
+
+
+.nav.cart > a > span {
+    background: #ffffff none repeat scroll 0 0;
+    border-radius: 3px;
+    color: #ffffff;
+}
+
+.nav.cart > a > span b {
+    color: #ffffff;
+}
+.nav.cart > a, #cart > button 
+{
+    background-image: url("../img/cart_white.png");        
+}    
+
+#top, #top a, .btn.btn-link 
+{
+    color: #eee;
+    border:none;
+}    
+
+form.navbar-search > div.input-group > button 
+{
+	background:transparent url("../img/search_white.png") no-repeat center;
+	border-width: 2px 2px 2px medium;
+	border-color:#eee;
+	color: #fff;
+}
+
+.navbar-search .search-query
+{
+    background:transparent;
+	border-width: 2px medium 2px 2px;
+	border-color:#eee;
+	color: #fff;
+}
+
+.navbar-search .select 
+{
+	color: #fff;
+	border-color:#eee;
+	border-width: 2px medium;
+	background:transparent url("../img/dk_arrows_white.png") no-repeat scroll left 15px center
+}
+
+.navbar-search .select select
+{
+	border-color:transparent;
+}
+
+.header-phone 
+{
+  color: #eee;
+  background-image:url(../img/phone_white.png);
+}
+
+.header-phone span {
+  color: #ccc;
+}

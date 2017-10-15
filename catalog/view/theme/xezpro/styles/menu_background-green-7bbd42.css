@@ -1,0 +1,207 @@
+.header
+{
+	background:#7bbd42;
+	border-bottom: none;
+	border-top: none;
+}
+
+.navbar .nav > li > a, .navbar .nav > li b, .navbar .nav > li.highlight > a
+{
+	color:#fff;
+}
+
+
+.navbar .nav > li:hover
+{
+	color:#333;
+	background:#fff;
+}
+.navbar .nav > li:hover, .navbar .nav > li:hover > a:hover
+{
+	color:#333;
+}
+
+.navbar .nav > li.dropdown:hover > a,.navbar .nav > li.dropdown.highlight:hover > a
+{
+	color:#333;
+	background:#fff;
+}
+
+.navbar .nav > li 
+{
+    border-left: 1px solid #89cb50;
+    border-right: 1px solid #6fb136;
+}
+
+.navbar .nav > li.highlight
+{
+	background:#444;
+}
+
+.navbar .dropdown-menu > li:hover > a:hover
+{
+	background-color:#7bbd42;
+}
+
+.btn:hover
+{
+   background-color:#7bbd42;
+}
+
+#newsletter,
+.btn-primary:hover, .btn.btn-primary:hover, .product .btn.btn-primary:hover, #button-confirm:hover, .button:hover
+{
+   background-color:#7bbd42;
+}
+
+.navbar-toggle .icon-bar
+{
+	background:#fff;
+}
+
+.heading h2, #logo a {
+  color: #7bbd42;
+}
+
+.navbar .dropdown-menu > li > a:hover
+{
+		background:#7bbd42;
+}
+
+.navbar .nav > .active > a, .navbar .nav > .active > a:hover, .navbar .nav > .active > a:focus
+{
+	border-bottom:2px solid #7bbd42;
+}
+
+.left-menu > div.category_module ul li.active > a
+{
+	border-bottom:1px solid #7bbd42;
+}
+
+.product > div > div.hover > div > a > span
+{
+	background:#7bbd42;
+	background:rgba(241, 89, 34,0.9);
+}
+
+/*
+.product .price p  
+{
+   color:#7bbd42;
+}
+
+.product .price .price-old
+{
+    color:#7bbd42;
+}  
+*/
+.product .addcart a 
+{
+    background:#7bbd42;
+}
+
+.product-list .product .price p
+{
+    color:#7bbd42;
+}
+
+#twitter_update_list a {
+    color: #7bbd42;
+}
+
+.show-login a 
+{
+   color:#7bbd42;
+}
+
+.your_order .radio:hover
+{
+   color:#7bbd42;
+}
+
+.controls a:hover
+{
+   color:#7bbd42;
+}
+
+.image-additional a:focus 
+{
+  outline: 1px dotted #7bbd42;
+}
+
+.product-info li a:hover
+{
+   color:#7bbd42;
+}
+
+.product-info #button-cart
+{
+     background:#7bbd42;
+}
+
+.tabs .nav-tabs > li.active > a 
+{
+  color: #7bbd42;
+}
+/*
+.tab-pane a 
+{
+   color:#7bbd42;
+}
+*/
+.sitemap .subtitle a:hover
+{
+	color:#7bbd42;
+}
+
+.content-blog h3 a:hover
+{
+	color:#7bbd42;
+}
+.post-detail a 
+{
+	color:#7bbd42;
+}
+
+.text-blog a em:hover
+{
+	color:#7bbd42;
+}
+
+.col-post ul.post-menu li a:hover
+{
+	color:#7bbd42;
+}
+
+.col-post ul.tags a:hover
+{
+	background:#7bbd42; 
+}
+
+a.comment-reply-link
+{
+	color:#7bbd42;
+}
+
+.filters li:hover 
+{
+  background:#7bbd42;
+}
+
+.filters li.active {
+  background:#7bbd42;
+}
+
+.blog-item .readmore:hover
+{
+	background:#7bbd42;
+}
+
+
+div.sequence a.button
+{
+	border-color:#7bbd42;
+	color:#7bbd42;
+	border-color:#333;
+	color:#333;
+}

@@ -1,0 +1,34 @@
+.header.container
+{
+	width:100%;
+}
+
+.navbar .nav > li:first-child
+{
+	border-radius:0px;
+}
+
+
+.navbar .nav > li.highlight
+{
+	/*background:rgba(0, 0, 0, 0.15);*/
+}
+
+
+.page-container
+{
+	margin:40px auto 0px;
+}
+
+.breadcrumb {
+    margin: 10px 0 0;
+}    
+
+div.sequence > .sequence-canvas .container .message-slide
+{
+    padding:0px 30px 20px;
+}
+
+div#header {
+    padding: 30px 15px 30px;
+}

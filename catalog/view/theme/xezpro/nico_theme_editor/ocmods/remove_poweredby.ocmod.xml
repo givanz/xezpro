@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<modification>
+    <name>Nico - Remove footer powered by text</name>
+    <version>1.0</version>
+    <author>nicole_89</author>
+    <link>http://www.nicolette.ro</link>
+    <code>nico_remove_poweredby</code>
+
+	<file path="catalog/language/*/common/footer.php">
+		<operation>
+			<search><![CDATA[$_['text_powered']]]></search>
+			<add position="replace" trim="true"><![CDATA[$_['text_powered']      = '%s &copy; %s';//]]></add>
+		</operation>
+	</file>
+</modification>

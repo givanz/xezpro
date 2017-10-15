@@ -1,0 +1,32 @@
+@media (min-width: 768px) {
+  .header.container {
+    width: 750px;
+  }
+}
+@media (min-width: 992px) {
+  .header.container {
+    width: 970px;
+  }
+}
+
+.navbar .nav > li:first-child
+{
+	border-radius:5px 0 0 5px;
+}
+
+.page-container
+{
+	margin:20px auto 0px;
+}
+
+
+div.sequence > .sequence-canvas .container .message-slide
+{
+    padding:0px 30px 0px;
+}
+
+
+.header.container .navbar.container
+{
+	padding:0px;
+}

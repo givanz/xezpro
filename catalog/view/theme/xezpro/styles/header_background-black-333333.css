@@ -1,0 +1,84 @@
+body, #top 
+{
+    background: #333333
+}
+    
+/*.heading h2, */
+#logo a {
+    color: #55d5ff;
+}
+
+#logo #text-logo a span {
+    color: #ffffff;
+}
+
+#logo #text_under_logo 
+{
+    color: #cccccc;
+}    
+
+
+.nav.cart > a > span {
+    background: #ffffff none repeat scroll 0 0;
+    border-radius: 3px;
+    color: #ffffff;
+}
+
+.nav.cart > a > span b {
+    color: #ffffff;
+}
+.nav.cart > a, #cart > button 
+{
+    background-image: url("../img/cart_white.png");        
+}    
+
+#top, #top  #top-links a, .btn.btn-link 
+{
+    color: #aaaaaa;
+    border:none;
+}    
+
+
+form.navbar-search > div.input-group > button 
+{
+	background:transparent url("../img/search_white.png") no-repeat center;
+	border-width: 2px 2px 2px medium;
+	border-color:rgba(255,255,255, 0.5);
+	color: #fff;
+}
+
+.navbar-search .search-query
+{
+    background:transparent;
+	border-width: 2px medium 2px 2px;
+	border-color:rgba(255,255,255, 0.5);
+	color: #fff;
+}
+
+.navbar-search .search-query:focus
+{
+	border-right:2px solid;
+}
+
+.navbar-search .select 
+{
+	color: #fff;
+	border-color:rgba(255,255,255, 0.5);
+	border-width: 2px medium;
+	background:transparent url("../img/dk_arrows_white.png") no-repeat scroll left 15px center
+}
+
+.navbar-search .select select
+{
+	border-color:transparent;
+}
+
+.header-phone 
+{
+  color: #eee;
+  background-image:url(../img/phone_white.png);
+}
+
+.header-phone span {
+  color: #ccc;
+}

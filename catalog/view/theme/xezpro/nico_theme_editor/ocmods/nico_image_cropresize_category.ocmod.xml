@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<modification>
+    <name>Nico - Images white padding to crop resize on category/search page</name>
+    <version>1.0</version>
+    <author>nicole_89</author>
+    <link>http://www.nicolette.ro</link>
+    <code>nico_cropresize_category</code>
+
+	<file path="catalog/controller/product/category.php">
+		<operation>
+			<search><![CDATA[model_tool_image->resize(]]></search>
+			<add position="replace" trim="true"><![CDATA[model_tool_image->cropsize(]]></add>
+		</operation>
+	</file>
+
+	<file path="catalog/controller/product/manufacturer.php">
+		<operation>
+			<search><![CDATA[model_tool_image->resize(]]></search>
+			<add position="replace" trim="true"><![CDATA[model_tool_image->cropsize(]]></add>
+		</operation>
+	</file>
+	
+	<file path="catalog/controller/product/special.php">
+		<operation>
+			<search><![CDATA[model_tool_image->resize(]]></search>
+			<add position="replace" trim="true"><![CDATA[model_tool_image->cropsize(]]></add>
+		</operation>
+	</file>
+	
+	<file path="catalog/controller/product/search.php">
+		<operation>
+			<search><![CDATA[model_tool_image->resize(]]></search>
+			<add position="replace" trim="true"><![CDATA[model_tool_image->cropsize(]]></add>
+		</operation>
+	</file>
+
+	<file path="catalog/controller/product/product.php">
+		<operation>
+			<search><![CDATA[$image = $this->model_tool_image->resize($result['image'], $this->config->get('config_image_related_width'), $this->config->get('config_image_related_height'));]]></search>
+			<add position="replace" trim="true"><![CDATA[$image = $this->model_tool_image->cropsize($result['image'], $this->config->get('config_image_related_width'), $this->config->get('config_image_related_height'));]]></add>
+		</operation>
+	</file>
+</modification>

@@ -1,0 +1,222 @@
+#language{display:block;}
+#currency{display:block;}
+#logo #text_under_logo{display:block;}
+#logo #image-logo{display:none;}
+#logo #text-logo{display:inline-block;}
+.product .actions button.btn{display:block;}
+body { background-image: none;}
+
+
+
+/* background_color -  */
+
+
+
+/* page_alignment -  */
+
+
+
+/* color - color-red.css */
+
+.header,.header .navbar-collapse, .header .navbar-nav
+{
+	background:#f15922;
+	background-color:#f15922;
+	border-bottom: none;
+	border-top: none;
+	filter:none;
+}
+
+.navbar .nav > li > a, .navbar .nav > li b, .navbar .nav > li.highlight > a
+{
+	color:#fff;
+}
+
+
+.navbar .nav > li:hover
+{
+	color:#333;
+	background:#fff;
+}
+.navbar .nav > li:hover, .navbar .nav > li:hover > a:hover
+{
+	color:#333;
+}
+
+.navbar .nav > li.dropdown:hover > a,.navbar .nav > li.dropdown.highlight:hover > a
+{
+	color:#333;
+	background:#fff;
+}
+
+.navbar .nav > li {
+  border-left: 1px solid #fe662f;
+  border-right: 1px solid #e74f18;
+}
+
+.navbar .nav > li.highlight
+{
+	background:#444;
+}
+
+.btn:hover
+{
+   background-color:#f15922;
+}
+
+.btn.btn-link.dropdown-toggle:hover
+{
+	background-color:transparent;
+}
+
+
+.btn-primary:hover, .btn.btn-primary:hover, .product .btn.btn-primary:hover, #button-confirm:hover, .button:hover
+{
+   background-color:#f15922;
+}
+
+.navbar-toggle .icon-bar
+{
+	background:#fff;
+}
+
+#logo a {
+  color: #f15922;
+}
+
+.navbar .dropdown-menu > li > a:hover
+{
+		background:#f15922;
+}
+
+.navbar .nav > .active > a, .navbar .nav > .active > a:hover, .navbar .nav > .active > a:focus
+{
+	border-bottom:2px solid #f15922;
+}
+
+.left-menu > div.category_module ul li.active > a
+{
+	border-bottom:1px solid #f15922;
+}
+
+.product > div > div.hover > div > a > span
+{
+	background:#f15922;
+	background:rgba(241, 89, 34,0.9);
+}
+
+.product .price p  
+{
+   color:#f15922;
+}
+
+.product .price .price-old
+{
+    color:#f15922;
+}  
+
+.product .addcart a 
+{
+    background:#f15922;
+}
+
+.product-list .product .price p
+{
+    color:#f15922;
+}
+
+#twitter_update_list a {
+    color: #f15922;
+}
+
+.show-login a 
+{
+   color:#f15922;
+}
+
+.your_order .radio:hover
+{
+   color:#f15922;
+}
+
+.controls a:hover
+{
+   color:#f15922;
+}
+
+.image-additional a:focus 
+{
+  outline: 1px dotted #f15922;
+}
+
+.product-info li a:hover
+{
+   color:#f15922;
+}
+
+.product-info #button-cart
+{
+     background:#f15922;
+}
+
+.tabs .nav-tabs > li.active > a 
+{
+  background: none repeat scroll 0 0 #f15922;
+}
+/*
+.tab-pane a 
+{
+   color:#f15922;
+}
+*/
+.sitemap .subtitle a:hover
+{
+	color:#f15922;
+}
+
+.content-blog h3 a:hover
+{
+	color:#f15922;
+}
+.post-detail a 
+{
+	color:#f15922;
+}
+
+.text-blog a em:hover
+{
+	color:#f15922;
+}
+
+.col-post ul.post-menu li a:hover
+{
+	color:#f15922;
+}
+
+.col-post ul.tags a:hover
+{
+	background:#f15922; 
+}
+
+a.comment-reply-link
+{
+	color:#f15922;
+}
+
+.filters li:hover 
+{
+  background:#f15922;
+}
+
+.filters li.active {
+  background:#f15922;
+}
+
+.blog-item .readmore:hover
+{
+	background:#f15922;
+}
+
+
+/* catalog_mode -  */
+

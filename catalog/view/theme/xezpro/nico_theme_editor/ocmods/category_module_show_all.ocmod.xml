@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<modification>
+    <name>Nico - Category module show all categories</name>
+    <version>1.0</version>
+    <code>category_module_show_all</code>
+    <author>nicole_89</author>
+    <link>http://www.nicolette.ro</link>
+    <file path="catalog/controller/module/category.php">
+        <operation>
+            <search><![CDATA[if ($category['category_id'] == $data['category_id']) {]]></search>
+            <add position="replace"><![CDATA[if (($category['category_id'] == $data['category_id']) || !isset($_GET['path'])){]]></add>
+        </operation>
+    </file> 
+    
+    <file path="catalog/controller/extension/module/category.php">
+        <operation>
+            <search><![CDATA[if ($category['category_id'] == $data['category_id']) {]]></search>
+            <add position="replace"><![CDATA[if (($category['category_id'] == $data['category_id']) || !isset($_GET['path'])){]]></add>
+        </operation>
+    </file> 
+</modification>

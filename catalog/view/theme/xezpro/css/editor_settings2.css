@@ -1,0 +1,165 @@
+
+
+/* color -  */
+
+
+
+/* menu - menu-fullwidth-0094dc.css */
+
+
+
+/* main_menu - main_menu-fullwidth-0094dc.css */
+
+.header.container
+{
+	width:100%;
+}
+
+.navbar .nav > li:first-child
+{
+	border-radius:0px;
+}
+
+
+.navbar .nav > li.highlight
+{
+	/*background:rgba(0, 0, 0, 0.15);*/
+}
+
+
+.page-container
+{
+	margin:40px auto 0px;
+}
+
+.breadcrumb {
+    margin: 10px 0 0;
+}    
+
+div.sequence > .sequence-canvas .container .message-slide
+{
+    padding:0px 30px 20px;
+}
+
+div#header {
+    padding: 20px 0 30px;
+}
+
+
+/* slider_background - slider_background-blue-e7f4fa.css */
+
+.sequence
+{
+	background:#e7f4fa;
+}
+
+
+/* header_background - header_background-black-333333.css */
+
+body, #top 
+{
+    background: #333333
+}
+    
+/*.heading h2, */
+#logo a {
+    color: #55d5ff;
+}
+
+#logo #text-logo a span {
+    color: #ffffff;
+}
+
+#logo #text_under_logo 
+{
+    color: #cccccc;
+}    
+
+
+.nav.cart > a > span {
+    background: #ffffff none repeat scroll 0 0;
+    border-radius: 3px;
+    color: #ffffff;
+}
+
+.nav.cart > a > span b {
+    color: #ffffff;
+}
+.nav.cart > a, #cart > button 
+{
+    background-image: url("../img/cart_white.png");        
+}    
+
+#top, #top  #top-links a, .btn.btn-link 
+{
+    color: #aaaaaa;
+    border:none;
+}    
+
+
+form.navbar-search > div.input-group > button 
+{
+	background:transparent url("../img/search_white.png") no-repeat center;
+	border-width: 2px 2px 2px medium;
+	border-color:rgba(255,255,255, 0.5);
+	color: #fff;
+}
+
+.navbar-search .search-query
+{
+    background:transparent;
+	border-width: 2px medium 2px 2px;
+	border-color:rgba(255,255,255, 0.5);
+	color: #fff;
+}
+
+.navbar-search .search-query:focus
+{
+	border-right:2px solid;
+}
+
+
+.navbar-search .select 
+{
+	color: #fff;
+	border-color:rgba(255,255,255, 0.5);
+	border-width: 2px medium;
+	background:transparent url("../img/dk_arrows_white.png") no-repeat scroll left 15px center
+}
+
+.navbar-search .select select
+{
+	border-color:transparent;
+}
+
+
+/* search_background -  */
+
+#language{display:block;}
+div.product div.actions button.btn{display:none;}
+#currency{display:block;}
+.product .actions div.rating{display:block;}
+#top-links .top-login{display:none;}
+#social_band{display:block;}
+#newsletter{display:block;}
+div.footer, div.footer.black{display:block;}
+.product-info .product_wish_compare{display:none;}
+body {;}
+
+
+
+.header-phone 
+{
+  color: #eee;
+  background-image:url(../img/phone_white.png);
+}
+
+.header-phone span {
+  color: #ccc;
+}
+
+
+#social_band
+{
+	display:none;
+}

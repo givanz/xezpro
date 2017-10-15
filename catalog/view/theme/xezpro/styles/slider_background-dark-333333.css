@@ -1,0 +1,16 @@
+div.sequence
+{
+	background:#333;
+	color:#fff;
+}
+
+
+.sequence h2, .sequence h3, .sequence a.button, .sequence p
+{
+	color:#fff;
+}
+
+.sequence a.button
+{
+	border-color:#fff;
+}

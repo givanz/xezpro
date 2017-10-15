@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<modification>
+    <name>Nico - Add to cart popup product image</name>
+    <version>1.0</version>
+    <author>nicole_89</author>
+    <link>http://www.nicolette.ro</link>
+    <code>add_to_cart_popup_image</code>
+
+	<file path="catalog/controller/checkout/cart.php">
+		<operation>
+			<search><![CDATA[$json['success'] = sprintf($this->language->get('text_success'), $this->url->link('product/product', 'product_id=' . $this->request->post['product_id']), $product_info['name'], $this->url->link('checkout/cart'));]]></search>
+			<add position="replace" trim="true"><![CDATA[
+				$this->load->language('common/cart');
+				$this->load->model('tool/image');
+				$image = $this->model_tool_image->resize($product_info['image'], 70, 70 /*$this->config->get('config_image_cart_width'), $this->config->get('config_image_cart_height')*/);
+				$json['success'] = '<img class="prod_image" src="' . $image . '"><div>' . 
+									str_replace('<a ','<br/><a ',sprintf($this->language->get('text_success'), $this->url->link('product/product', 'product_id=' . $this->request->post['product_id']), $product_info['name'], $this->url->link('checkout/cart'))) .
+									'<div><a href="' . $this->url->link('checkout/cart') . '"><i class="fa fa-shopping-cart"></i> ' . $this->language->get('text_cart') . '</a>&nbsp;&nbsp; ' . '<a href="' . $this->url->link('checkout/checkout') . '"><i class="fa fa-share"></i> '. $this->language->get('text_checkout') . '</a></div></div>';
+			]]></add>
+		</operation>
+	</file>
+</modification>

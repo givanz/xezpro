@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<modification>
+    <name>Nico - Product page image gallery video support</name>
+    <version>1.0</version>
+    <author>nicole_89</author>
+    <link>http://www.nicolette.ro</link>
+    <code>nico_product_videos</code>
+
+
+	<!-- oc 2.3.x -->
+	<file path="admin/view/template/catalog/product_form.tpl">
+		<operation>
+			<search><![CDATA[<input type="hidden" name="product_image[<?php echo $image_row; ?>][image]" value="<?php echo $product_image['image']; ?>" id="input-image<?php echo $image_row; ?>" />]]></search>
+			<add position="replace" trim="true"><![CDATA[&ensp;<label class="help">Enter video url to override image</label>&ensp;<input type="text" name="product_image[<?php echo $image_row; ?>][image]" value="<?php echo $product_image['image']; ?>" id="input-image<?php echo $image_row; ?>" />]]></add>
+		</operation>
+
+		<operation>
+			<search><![CDATA[<input type="hidden" name="product_image[' + image_row + '][image]" value="" id="input-image' + image_row + '" />]]></search>
+			<add position="replace" trim="true"><![CDATA[&ensp;<label class="help">Enter video url to override image</label>&ensp;<input type="text" name="product_image[' + image_row + '][image]" value="" id="input-image' + image_row + '" />]]></add>
+		</operation>
+	</file>
+	
+		    
+<!-- oc 2.2.x or lower 
+	<file path="admin/view/template/catalog/product_form.tpl">
+		<operation>
+			<search><![CDATA[<td class="text-right"><?php echo $entry_sort_order; ?></td>]]></search>
+			<add position="before" trim="true"><![CDATA[<td class="text-left">Youtube/vimeo link</td>]]></add>
+		</operation>
+		
+		<operation>
+			<search><![CDATA[<input type="hidden" name="product_image[<?php echo $image_row; ?>][image]" value="<?php echo $product_image['image']; ?>" id="input-image<?php echo $image_row; ?>" />]]></search>
+			<add position="replace" trim="true"><![CDATA[</td><td><label class="help">Enter video url to override image</label><br/><input type="text" class="form-control" name="product_image[<?php echo $image_row; ?>][image]" value="<?php echo $product_image['image']; ?>" id="input-image<?php echo $image_row; ?>" />]]></add>
+		</operation>
+
+		<operation>
+			<search><![CDATA[<input type="hidden" name="product_image[' + image_row + '][image]" value="" id="input-image' + image_row + '" />]]></search>
+			<add position="replace" trim="true"><![CDATA[</td><td><label class="help">Enter video url to override image</label><br/><input type="text" class="form-control" name="product_image[' + image_row + '][image]" value="" id="input-image' + image_row + '" />]]></add>
+		</operation>
+	</file>
+-->
+
+	<file path="admin/controller/catalog/product.php">		
+		<operation>
+			<search><![CDATA[if (is_file(DIR_IMAGE . $product_image['image'])) {]]></search>
+			<add position="before" trim="true"><![CDATA[if (strpos($product_image['image'], 'http') !== false) { $image = $product_image['image'];$thumb = 'no_image.png';} else ]]></add>
+		</operation>
+	</file>
+	
+	<file path="catalog/view/theme/*/template/product/product.tpl">		
+		<operation>
+			<search><![CDATA[<li class="image-additional"><a class="thumbnail]]></search>
+			<add position="after"><![CDATA[ <?php if (strpos($image['popup'], 'http') !== false && (strpos($image['popup'], HTTP_SERVER) === false && strpos($image['popup'], HTTPS_SERVER) === false)) echo 'mfp-iframe';?> ]]></add>
+		</operation>
+	</file>
+
+	<file path="catalog/controller/product/product.php">		
+		<operation>
+			<search><![CDATA[$data['images'][] = array(]]></search>
+			<add position="before" trim="true"><![CDATA[if (strpos($result['image'], 'http') !== false) $data['images'][] = array(
+					'popup' => $result['image'],
+					'thumb' => (isset($this->request->server['HTTPS']) && $this->request->server['HTTPS'])?$this->config->get('config_ssl') . 'image/video.png':$this->config->get('config_url') . 'image/video.png'
+				); else ]]></add>
+		</operation>
+	</file>
+</modification>

@@ -1,0 +1,199 @@
+.header
+{
+	background:#29c76a;
+	border-bottom: none;
+	border-top: none;
+}
+
+.navbar .nav > li > a, .navbar .nav > li b, .navbar .nav > li.highlight > a
+{
+	color:#fff;
+}
+
+
+.navbar .nav > li:hover
+{
+	color:#333;
+	background:#fff;
+}
+.navbar .nav > li:hover, .navbar .nav > li:hover > a:hover
+{
+	color:#333;
+}
+
+.navbar .nav > li.dropdown:hover > a,.navbar .nav > li.dropdown.highlight:hover > a
+{
+	color:#333;
+	background:#fff;
+}
+
+.navbar .nav > li 
+{
+   border-left: 1px solid #36d477;
+   border-right: 1px solid #1cba5d;
+}
+
+.navbar .nav > li.highlight
+{
+	background:#444;
+}
+
+.btn:hover
+{
+   background-color:#29c76a;
+}
+
+#newsletter,
+.btn-primary:hover, .btn.btn-primary:hover, .product .btn.btn-primary:hover, #button-confirm:hover, .button:hover
+{
+   background-color:#29c76a;
+}
+
+.navbar-toggle .icon-bar
+{
+	background:#fff;
+}
+
+.heading h2, #logo a {
+  color: #29c76a;
+}
+
+.navbar .dropdown-menu > li > a:hover
+{
+		background:#29c76a;
+}
+
+.navbar .nav > .active > a, .navbar .nav > .active > a:hover, .navbar .nav > .active > a:focus
+{
+	border-bottom:2px solid #29c76a;
+}
+
+.left-menu > div.category_module ul li.active > a
+{
+	border-bottom:1px solid #29c76a;
+}
+
+.product > div > div.hover > div > a > span
+{
+	background:#29c76a;
+	background:rgba(241, 89, 34,0.9);
+}
+
+.product .price p  
+{
+   color:#29c76a;
+}
+
+.product .price .price-old
+{
+    color:#29c76a;
+}  
+
+.product .addcart a 
+{
+    background:#29c76a;
+}
+
+.product-list .product .price p
+{
+    color:#29c76a;
+}
+
+#twitter_update_list a {
+    color: #29c76a;
+}
+
+.show-login a 
+{
+   color:#29c76a;
+}
+
+.your_order .radio:hover
+{
+   color:#29c76a;
+}
+
+.controls a:hover
+{
+   color:#29c76a;
+}
+
+.image-additional a:focus 
+{
+  outline: 1px dotted #29c76a;
+}
+
+.product-info li a:hover
+{
+   color:#29c76a;
+}
+
+.product-info #button-cart
+{
+     background:#29c76a;
+}
+
+.tabs .nav-tabs > li.active > a 
+{
+  color:#29c76a;
+}
+/*
+.tab-pane a 
+{
+   color:#29c76a;
+}
+*/
+.sitemap .subtitle a:hover
+{
+	color:#29c76a;
+}
+
+.content-blog h3 a:hover
+{
+	color:#29c76a;
+}
+.post-detail a 
+{
+	color:#29c76a;
+}
+
+.text-blog a em:hover
+{
+	color:#29c76a;
+}
+
+.col-post ul.post-menu li a:hover
+{
+	color:#29c76a;
+}
+
+.col-post ul.tags a:hover
+{
+	background:#29c76a; 
+}
+
+a.comment-reply-link
+{
+	color:#29c76a;
+}
+
+.filters li:hover 
+{
+  background:#29c76a;
+}
+
+.filters li.active {
+  background:#29c76a;
+}
+
+.blog-item .readmore:hover
+{
+	background:#29c76a;
+}
+
+
+div.sequence a.button
+{
+	border-color:#29c76a;
+	color:#29c76a;
+}

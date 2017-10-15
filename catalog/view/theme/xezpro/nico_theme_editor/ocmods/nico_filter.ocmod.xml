@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<modification>
+    <name>Nico - Filter integration</name>
+    <version>1.0</version>
+    <author>nicole_89</author>
+    <link>http://www.nicolette.ro</link>
+    <code>nico_filter</code>
+
+	<file path="catalog/model/catalog/product.php">
+		<operation>
+			<search regex="true"><![CDATA[@\$sql .= " AND p.manufacturer_id = '" . \(int\)\$data\['filter_manufacturer_id'\] . "'";\s+}@]]></search>
+			<add position="replace"><![CDATA[$sql .= " AND p.manufacturer_id = '" . (int)$data['filter_manufacturer_id'] . "'";
+		}
+				
+		//-- nico filters
+		$sql .=  $filter_sql;
+		//-- nico filters
+
+			]]></add>
+		</operation>
+		<operation>
+			<search><![CDATA[$sql .= " LEFT JOIN " . DB_PREFIX . "product_description]]></search>
+			<add position="replace" trim="true"><![CDATA[
+				//-- nico filters
+				$this->load->model('module/nicofilter');
+				
+				$filter_sql = $this->model_module_nicofilter->build_filters($this->request->get, array('category'));
+				$filter_joins = $this->model_module_nicofilter->get_joins();
+
+				$sql .= $filter_joins;
+				//-- nico filters
+				$sql .= " LEFT JOIN " . DB_PREFIX . "product_description
+			]]></add>
+		</operation>
+		<operation>
+			<search><![CDATA['date_added'       => $query->row['date_added'],]]></search>
+			<add position="replace" trim="true"><![CDATA['date_added'       => $query->row['date_added'], 'days_added' => round((time() - strtotime($query->row['date_added'])) / (60 * 60 * 24)),]]></add>
+		</operation>
+	</file>
+
+	<file path="catalog/controller/product/category.php">
+		<operation>
+			<search><![CDATA[$product_total = $this->model_catalog_product->getTotalProducts($filter_data);]]></search>
+			<add position="replace" trim="true"><![CDATA[
+			//-- nico filters
+			foreach($this->request->get as $name => $value)
+			{
+				if (strpos($name, 'filter_') !== false)
+				{
+					$filter_data[$name] = $value;
+				}
+			}
+			//-- nico filters
+			
+			$product_total = $this->model_catalog_product->getTotalProducts($filter_data);
+			]]></add>
+		</operation>
+		<operation>
+			<search><![CDATA[$pagination->url = $this->url->link('product/category', 'path=' . $this->request->get['path'] . $url . '&page={page}');]]></search>
+			<add position="replace" trim="true"><![CDATA[//$pagination->url = $this->url->link('product/category', 'path=' . $this->request->get['path'] . $url . '&page={page}');
+				//nico filters pagination fix
+				$pagination->url = preg_replace('@&page=\d+@', '', $_SERVER['REQUEST_URI']) .'&page={page}';]]></add>
+		</operation>
+		<operation>
+			<search><![CDATA['rating'      => $result['rating'],]]></search>
+			<add position="replace" trim="true"><![CDATA['rating'      => $result['rating'],'viewed'      => $result['viewed'], 'days_added' => round((time() - strtotime($result['date_added'])) / (60 * 60 * 24)),]]></add>
+		</operation>
+	</file>
+</modification>

@@ -1,0 +1,841 @@
+<!doctype html>  
+<!--[if IE 6 ]><html lang="en-us" class="ie6"> <![endif]-->
+<!--[if IE 7 ]><html lang="en-us" class="ie7"> <![endif]-->
+<!--[if IE 8 ]><html lang="en-us" class="ie8"> <![endif]-->
+<!--[if (gt IE 7)|!(IE)]><!-->
+<html lang="en-us"><!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	
+	<title>Nicole 89 Opencart Theme Documentation</title>
+
+	<meta name="generator" content="Documenter v1.6 http://rxa.li/documenter">
+	<link rel="stylesheet" href="css/documenter_style.css" media="all">
+	
+	<script src="js/jquery-1.8.3.min.js"></script>
+	<script src="js/jquery.easing.1.3.js"></script>
+	<script src="js/jquery.scrollTo-1.4.4-min.js"></script>
+	<script>
+	var theme_name = 'xez<span style="color:#0080c8">pro</span>';
+	var hide_modules = [
+	'floatingcart', 
+	'testimonials',
+	'textslider',
+	'parallax',
+	'backgroundslider',
+	/*'flexslider'*/
+	];
+	
+	var config = {
+		"sequence-background-width":"715",
+		"sequence-background-height":"400",
+		"customproducts-width":"150",
+		"customproducts-height":"150",
+	};
+
+	</script>	
+	
+	<style>
+		html{background-color:#fff;color:#383838;font-size:14px}
+		::-moz-selection{background:#444444;color:#DDDDDD;}
+		::selection{background:#444444;color:#DDDDDD;}
+		#documenter_sidebar #documenter_logo{background-image:url(img/logo.png);}
+		#documenter_sidebar {background-color:#fff;box-shadow:1px 1px 3px 0 #cccccc}
+		a{color:#000;}
+		hr{border-top:1px solid #EBEBEB;border-bottom:1px solid #000;}
+		#documenter_sidebar, #documenter_sidebar ol a{color:#fff;}
+		#documenter_sidebar ol a{}
+		#documenter_sidebar ol{}
+		#documenter_sidebar ol a{border-top:none;border-bottom:none;color:#555;font-weight:400}
+		#documenter_sidebar ol a:hover{background:#fff;color:#000;border-top:none;}
+		#documenter_sidebar ol a.current{background:#0080c8;;color:#fff;border-top:none;}
+		#documenter_copyright{display:block !important;visibility:visible !important;}
+		.caption-container
+		{
+			position:relative;
+		}
+
+		.caption
+		{
+			position:absolute;
+			top:0px;
+			left:0px;
+			background:#fff;
+			padding:2px 5px;
+			color:red;
+		}
+	</style>
+	
+</head>
+<body>
+	<div id="documenter_sidebar">
+		<a href="#documenter_cover" id="documenter_logo"></a>
+		<ol id="documenter_nav">
+			<li><a class="current" href="#documenter_cover">Start</a></li>
+			<li><a href="#installation">Installation</a></li>
+			<li><a href="#sample">Import sample data</a></li>
+			<li><a href="#configuration">Configuration</a></li>
+			<li><a href="#customproducts">Modules</a>
+				<ol>
+					<!--li><a href="#homepagemodules">Homepage modules</a></li-->
+					<li><a href="#customproducts">Custom products</a></li>
+					<li><a href="#sequenceslider">Sequence slider</a></li>
+					<li><a href="#megamenu">Mega menu setup</a></li>
+					<li><a href="#grid">Grid module setup</a></li>
+					<li><a href="#blog">Blog Latest Articles</a></li>
+					<li><a href="#socialauth">Social Auth</a></li>
+					<li><a href="#filter">Filter</a></li>
+					<li><a href="#producttabs">Product Tabs</a></li>
+					<li><a href="#sideblock">Side Block</a></li>
+					<li><a href="#loginpopup">Login Popup</a></li>
+					<li><a href="#imagegallery">Image Gallery</a></li>
+					<li><a href="#parallax">Parallax</a></li>
+					<li><a href="#banner">Banner</a></li>
+					<li><a href="#backgroundslider">Background Slider</a></li>
+					<li><a href="#cameraslider">Camera Slider</a></li>
+					<li><a href="#flexslider">Flexslider</a></li>
+					<li><a href="#floatingcart">Floating cart</a></li>
+					<li><a href="#newsletter">Newsletter</a></li>
+					<li><a href="#testimonials">Testimonials</a></li>
+					<li><a href="#textslider">Text Slider</a></li>
+					<li><a href="#customhtml">Custom html</a></li>
+				</ol>
+			</li>
+			<li><a href="#module_configuration">Module grid configuration</a></li>
+			<li><a href="#module_filter">Module filter</a>
+			<li><a href="#speedcache">Speed cache</a></li>
+			<li><a href="#socialband">Social band</a></li>
+			<li><a href="#onepagecheckout">One page checkout</a></li>
+			<li><a href="#patch">Image patch (1.5.6)</a></li>
+			<!-- <li><a href="#description">Rollover description</a></li> -->
+			<!-- li><a href="#cssfiles">CSS Files and Structure</a></li -->
+			<!-- li><a href="#javascript">JavaScript</a></li-->
+			<li><a href="#faq">FAQ</a>
+			
+				<ol>
+					<li>
+						<a href="#update">How to update theme?</a>
+					</li>
+					<li>
+						<a href="#twitter">How to get twitter id?</a>
+					</li>
+					<li>
+						<a href="#panel">How to hide <br/>customize theme panel?</a>
+					</li>
+					<li>
+						<a href="#modsec">Saving modules in <br/>opencart admin<br/> gives 40x error</a>
+					</li>
+					<li>
+						<a href="#bug">I found a theme bug,<br/> what can I do?</a>
+					</li>
+				</ol>
+			
+			</li>
+			<li><a href="#support">Theme support</a></li>
+			<li><a href="#rating">Theme rating</a></li>
+			<!-- li><a href="#credits">Sources and Credits</a></li-->
+		</ol>
+		<div id="documenter_copyright">Copyright nicole_89 2014<br>
+		</div>
+	</div>
+	<div id="documenter_content">
+	<section id="documenter_cover"><h1><span><script>document.write(theme_name)</script></span></h1><h2>Opencart Theme</h2><hr><ul><!-- <li>Created: 10/12/2014</li> --><li>By: nicole_89</li></ul></section>
+<section id="Installation">
+<h3 id="installation"><strong>Installation</strong></h3><hr class="notop">
+		
+		<p>Unzip the contents of the archive and upload the folders called <b>admin</b>, <b>catalog</b>, <b>image</b> and <b>system</b> and <b>nico_speed_cache.inc</b> file to the root folder of your opencart store.<br/>You will know if you selected the root folder of your opencart store if you already see two folders named admin and catalog there like in the picture below</p>
+		<p>To use the theme after upload go to <b>admin > settings > edit > store > template</b> and choose <b><script>document.write(theme_name)</script></b></p>
+
+		<img src="img/upload.jpg" alt="Installation" />
+		<br/>
+		<OBJECT CLASSID="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" WIDTH="1024" HEIGHT="770" CODEBASE="http://active.macromedia.com/flash5/cabs/swflash.cab#version=7,0,0,0">
+		<PARAM NAME=movie VALUE="upload.swf">
+		<PARAM NAME=play VALUE=false><PARAM NAME=autoplay VALUE=false>
+		<PARAM NAME=loop VALUE=false>
+		<PARAM NAME=wmode VALUE=transparent>
+		<PARAM NAME=quality VALUE=high>
+		<EMBED SRC="upload.swf" WIDTH=1024 HEIGHT=800 quality=high loop=false wmode=transparent autoplay=false flashvars="autoplay=false&play=false"  start=false TYPE="application/x-shockwave-flash" PLUGINSPAGE="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash">
+		</EMBED>
+		</OBJECT>
+		<br/>
+		
+		<h4>Opencart 1 Install</h4>
+		<OBJECT CLASSID="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" WIDTH="1024" HEIGHT="770" CODEBASE="http://active.macromedia.com/flash5/cabs/swflash.cab#version=7,0,0,0">
+		<PARAM NAME=movie VALUE="upload.swf">
+		<PARAM NAME=play VALUE=false><PARAM NAME=autoplay VALUE=false>
+		<PARAM NAME=loop VALUE=false>
+		<PARAM NAME=wmode VALUE=transparent>
+		<PARAM NAME=quality VALUE=high>
+		<EMBED SRC="opencart1-install.swf" WIDTH=1024 HEIGHT=800 quality=high loop=false wmode=transparent autoplay=false flashvars="autoplay=false&play=false"  start=false TYPE="application/x-shockwave-flash" PLUGINSPAGE="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash">
+		</EMBED>
+		</OBJECT>
+		<br/>
+		<i style="color:red">For opencart versions older than 2.3.x</i> you need to delete <b>/admin/controller/extension/module/</b> from your server after uploading theme files, this folder is necessary only for oc 2.3.x only and it's in conflict with older opencart versions.
+		<br/>
+
+		<h4>Opencart 2 Install</h4>
+		<OBJECT CLASSID="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" WIDTH="1024" HEIGHT="770" CODEBASE="http://active.macromedia.com/flash5/cabs/swflash.cab#version=7,0,0,0">
+		<PARAM NAME=movie VALUE="upload.swf">
+		<PARAM NAME=play VALUE=false><PARAM NAME=autoplay VALUE=false>
+		<PARAM NAME=loop VALUE=false>
+		<PARAM NAME=wmode VALUE=transparent>
+		<PARAM NAME=quality VALUE=high>
+		<EMBED SRC="opencart2-install.swf" WIDTH=1024 HEIGHT=800 quality=high loop=false wmode=transparent autoplay=false flashvars="autoplay=false&play=false"  start=false TYPE="application/x-shockwave-flash" PLUGINSPAGE="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash">
+		</EMBED>
+		</OBJECT>
+		
+		
+		<h4 id="opencart22x">Opencart 2.2.x Install</h4>
+		<p>
+		<strong>1</strong> To install the theme on opencart 2.2.x you must first edit opencart admin > extensions > themes > <strong>Default Store Theme</strong> and set <strong>Theme Directory</strong> to <strong><script>document.write(theme_name)</script></strong></p>
+		<p><strong>2</strong> Then make sure that the selected theme in system > settings > store is set to <strong>default store theme</strong> (this should be set by default and this is step might not be necessary), bellow a video tutorial with the steps</p>
+		
+		<img src="img/opencart22x.gif">
+
+		<h4 id="opencart2300">Opencart 2.3.x Install</h4>
+		<p>
+		<strong>1</strong> To install the theme on opencart 2.3.x you must first edit opencart admin > extensions > themes > <strong>Default Store Theme</strong> and set <strong>Theme Directory</strong> to <strong><script>document.write(theme_name)</script></strong></p>
+		<p><strong>2</strong> Then make sure that the selected theme in system > settings > store is set to <strong>default store theme</strong> (this should be set by default and this is step might not be necessary), bellow a video tutorial with the steps</p>
+		
+		<img src="img/opencart2300.gif">
+
+</section>
+
+
+<section id="Sample">
+<h3 id="sample"><strong>Import sample data</strong></h3><hr class="notop">
+		
+		<p>The sample data tool will import product images and module configuration from my demo stores making your freshly installed theme look identical to the demo store with just one click</p>
+		<p>You can access import tool from <strong>customize theme</strong> button located at the bottom of your store front end, customize theme button is enabled only after opencart admin login.</p>
+		
+		<p><img src="img/sample.png"</p>
+		<br/>
+
+		<OBJECT CLASSID="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" WIDTH="1024" HEIGHT="770" CODEBASE="http://active.macromedia.com/flash5/cabs/swflash.cab#version=7,0,0,0">
+		<PARAM NAME=movie VALUE="license.swf">
+		<PARAM NAME=play VALUE=false><PARAM NAME=autoplay VALUE=false>
+		<PARAM NAME=loop VALUE=false>
+		<PARAM NAME=wmode VALUE=transparent>
+		<PARAM NAME=quality VALUE=high>
+		<EMBED SRC="import-sample.swf" WIDTH=1024 HEIGHT=800 quality=high loop=false wmode=transparent autoplay=false flashvars="autoplay=false&play=false"  start=false TYPE="application/x-shockwave-flash" PLUGINSPAGE="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash">
+		</EMBED>
+		</OBJECT>
+		<br/>
+
+
+		<p>The tool requires theme purchase code, you can find the purchase code in your license certificate in your account</p>
+		<p><img src="img/purchase_code.png"</p>
+		<br/>
+		<OBJECT CLASSID="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" WIDTH="1024" HEIGHT="770" CODEBASE="http://active.macromedia.com/flash5/cabs/swflash.cab#version=7,0,0,0">
+		<PARAM NAME=movie VALUE="license.swf">
+		<PARAM NAME=play VALUE=false><PARAM NAME=autoplay VALUE=false>
+		<PARAM NAME=loop VALUE=false>
+		<PARAM NAME=wmode VALUE=transparent>
+		<PARAM NAME=quality VALUE=high>
+		<EMBED SRC="license.swf" WIDTH=1024 HEIGHT=800 quality=high loop=false wmode=transparent autoplay=false flashvars="autoplay=false&play=false"  start=false TYPE="application/x-shockwave-flash" PLUGINSPAGE="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash">
+		</EMBED>
+		</OBJECT>
+		
+		
+		<p>After upload make sure that the the <b>css/</b> and <b>js/</b> folders located in <b>catalog/view/theme/<script>document.write(theme_name)</script>/</b> are writable by php to be able to use css and js concatenation feature to speed up page loading, if unsure you can set 0766 permission flag</p>
+		<!-- p>After the import is done you need to manually set module permission for your opencart user group, you can do this from opencart admin > system > users > users groups > module/nico*</p -->
+		<p><b>Note: If you use the import tool then the following theme configuration steps are no longer necessary, the import tool will configure all your modules and product image size automatically</b></p>
+</section>		
+
+
+<section id="Configuration">
+<h3 id="configuration"><strong>Theme configuration</strong></h3><hr class="notop">
+
+
+		
+		<h3>Set your image settings</h3>
+		
+		<p>Go to system / settings/ image and make sure that you use the values given below: </p>
+
+        <img src="img/settings.png" alt="Installation" />
+</section>
+				
+
+<!-- section id="Homepagemodules">
+<h3 id="homepagemodules"><strong>Homepage modules</strong></h3><hr class="notop">
+		
+		<p>Also, set this image size settings to any modules you want to display on the homepage (such as Featured, Lates, Bestsellers etc)</p>
+		
+		<h2>Featured/Latest</h2>
+		
+		<img src="img/latest.png" alt="Installation" />
+		
+		<br/><br/><br/>
+		
+		<h2>Nico custom products module</h2>
+		
+		<img src="img/custom_module.png" alt="Installation" />
+		
+		
+		<h3>Banners</h3>
+		
+		<p>You can also use built-in banners module.</p>
+
+		
+		<h3>How to use built-in banners module</h3>
+		</br>
+		
+		<p>Go to <b>system</b> > <b>design > banners</b> and click 'Insert'</p>
+		
+		<img src="img/banners.png" alt="Installation" />
+		
+		<hr>
+</section -->
+
+<section id="Customproducts">
+	<h3 id="customproducts"><strong>Custom products</strong></h3><hr class="notop">
+		<p>You can use this modules to display products in different ways such as 
+		<ul>
+		<li>Filter - each section is a filter that has a label when clicked only the products from the section are shown with a css3 animation</li>
+		<li>Tabs - each section added is a new tab</li>
+		<li>Carousel - products are shown within a carousel with left/right arrows to scroll between products</li> 
+		<li>Tabs + Carousel - both of the above</li>
+		<li>Grid (similar to category grid view)</li>
+		<li>List (similar to category list view)</li>
+		</ul>			
+		<p>from multiple sources like</p>
+		<ul>
+		<li>Autocomplete</li><li>Category</li><li>Manufacturer</li><li>Latest</li><li>Bestsellers</li><li>Specials</li><li>Popular</li><li>Recently viewed</li><li>Random</li><li>Alsobought</li><li>Related</li>
+		</ul>
+
+		<div class="caption-container">
+		<img src="img/customproducts.png">
+			<div class="caption" id="customproducts-width" style="left:210px;top:815px;">270</div>
+			<div class="caption" id="customproducts-height" style="left:210px;top:865px;">335</div>
+		</div>
+
+		
+</section>
+<section id="Sequenceslider">
+	<h3 id="sequenceslider"><strong>Sequence slider</strong></h3><hr class="notop">
+		<p>Sequence slider has two image types, the standard background image (that can also be video) that can be used after selecting background type = image and slide image (optional) that is a small image that can be displayed above the background<p>
+		<div class="caption-container">
+		<img src="img/sequenceslider.png">
+			<div class="caption" id="sequence-background-width" style="left:210px;top:480px;">1024</div>
+			<div class="caption" id="sequence-background-height" style="left:210px;top:540px;">550</div>
+		</div>
+		
+		
+</section>
+
+
+
+<section id="Megamenu">
+	<h3 id="megamenu"><strong>Megamenu</strong></h3><hr class="notop">
+		<p>By default no menu is visible without megamenu configuration, in order to add a menu you need to add megamenu for <b>layout = all pages</b> and <b>position = menu</b> in opencart admin > system > design > layouts, if all pages layout is missing you need to use import tool to add it<p>
+		<p>Menu items can be reorderd by drag and drop<p>
+		<p>Full width means megamenu display, if set to false menu items are shown as default menu items<p>
+		<p>Highlight changes menu text color<p>
+		<p>You can use Font icon to add a fontawesome icon in front of menu item, for example to add diamond icon you need to enter fa-diamond, you can find complete fontawesome list here <a href="http://fontawesome.io/icons/">http://fontawesome.io/icons/</a><p>
+		<img src="img/megamenu.png">
+		
+</section>
+
+<section id="Grid">
+	<h3 id="grid"><strong>Grid</strong></h3><hr class="notop">
+		<p>Grid module has a visual configuration interface and can be set up by drag and droping grid boxes<p>
+		<img src="img/grid.png">
+		<br/>
+		<OBJECT CLASSID="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" WIDTH="1024" HEIGHT="770" CODEBASE="http://active.macromedia.com/flash5/cabs/swflash.cab#version=7,0,0,0">
+		<PARAM NAME=movie VALUE="grid.swf">
+		<PARAM NAME=play VALUE=false><PARAM NAME=autoplay VALUE=false>
+		<PARAM NAME=loop VALUE=false>
+		<PARAM NAME=wmode VALUE=transparent>
+		<PARAM NAME=quality VALUE=high>
+		<EMBED SRC="grid.swf" WIDTH=1024 HEIGHT=800 quality=high loop=false wmode=transparent autoplay=false flashvars="autoplay=false&play=false"  start=false TYPE="application/x-shockwave-flash" PLUGINSPAGE="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash">
+		</EMBED>
+		</OBJECT>		
+		
+		
+</section>
+
+
+<section id="Blog">
+<h3 id="blog"><strong>Blog</strong></h3><hr class="notop">
+		
+		<p>To use the blog features on your store you need to install one of the free blog modules supported by theme <a href="http://www.opencart.com/index.php?route=extension/extension/info&extension_id=11287" rel="nofollow">pavblog (oc 1.5.6)</a>, <a href="http://www.opencart.com/index.php?route=extension/extension/info&extension_id=18315&filter_search=blog&filter_license=0&filter_download_id=37" rel="nofollow">simpleblog (oc 1.5.6, oc 2.0.0.0)</a> and <a href="http://www.opencart.com/index.php?route=extension/extension/info&extension_id=21431&path=8&filter_license=0&filter_download_id=39&page=2" rel="nofollow">easy blog (2.0.x only)</a> module, the installation instructions are included in each blog package.</p> 
+		<p>
+		After you install the blog module by uploading module files, you can use the included theme blog module <b>Nico Blog Latest Articles</b> to display a feed of blog articles on homepage or other pages, you can also edit blog content directly from module 
+		<img src="img/blog.png">
+		</p>
+</section>   
+
+<section id="Socialauth">
+	<h3 id="socialauth"><strong>Socialauth</strong></h3><hr class="notop">
+		<p>Social auth module is used to add login with social providers such as facebook, google etc, when a new provider is added in the module a new icon is displayed on customer login page and in login popup module that when clicked automatically creates a new account on your store using the provider data<p>
+		<img src="img/socialauth.png">
+		
+		<h4>Facebook configuration</h4>
+		For facebook configuration go to <a href="https://developers.facebook.com/">https://developers.facebook.com/ </a>
+		<ol>
+			<li>my apps > add new app</li>
+			<li>choose <b>www website</b></li>
+			<li>enter a name for your app</li>
+			<li>create new facebook app id</li>
+			<li>use your store url for website url</li>
+			<li>Finish app creation and use <b>app id</b> for <b>key</b> and <b>secret</b> for <b>secret field</b></li>
+		</ol>
+		
+		<a href="https://developers.facebook.com/docs/apps/register">https://developers.facebook.com/docs/apps/register</a>
+		<br/><br/>
+		<img src="img/facebook_login.png">
+		
+		<h4>Google configuration</h4>
+		Go to <a href="https://console.developers.google.com/">https://console.developers.google.com/</a>
+		And follow the instructions from here <a href="https://developers.google.com/identity/sign-in/web/devconsole-project">https://developers.google.com/identity/sign-in/web/devconsole-project</a> use <b>client id</b> as  <b>key</b> and secret for  <b>secret</b> 
+		<p>for Authorized JavaScript origins use your store url, for redirect uri use this url http://www.yourstore.com/index.php?route=module/nicosocialauth/process&hauth.done=Google</p>
+		<br/>
+		<img src="img/google_login.png">
+		
+</section>
+
+<section id="Filter">
+	<h3 id="filter"><strong>Filter</strong></h3><hr class="notop">
+		<p>Filter module adds faceted search, you can choose what sections to activate and in what order (usually added to category pages (category layout) but can also filter homepage modules in this case is recommened to only have one module added to homepage to avoid confusion)<p>
+		<img src="img/filter1.png" style="float:left">
+		<img src="img/filter.png">
+		
+</section>
+
+<section id="Producttabs">
+	<h3 id="producttabs"><strong>Product tabs</strong></h3><hr class="notop">
+		<p>This module allows you to add new tabs on product page after description and rating tabs, using the filter option you can add certain tabs only for a certain product, without a filter the tab will be shown for all products<p>
+		<p>The module needs to be added to layout = product and position = products tab<p>
+		<img src="img/producttabs.png">
+		
+</section>
+
+<section id="Sideblock">
+	<h3 id="sideblock"><strong>Side block</strong></h3><hr class="notop">
+		<p>You can use this module to add side blocks that open on hover, supported blocks are Youtube, Vimeo, Facebook, Twitter, Image, Product and Text</p>
+		<p>You can add any custom widget by using block type = text and then from the html editor click source button and paste the widget code, for example for instagram widget you can use <a href="http://snapwidget.com/">http://snapwidget.com/</a> <a href="http://www.intagme.com/">http://www.intagme.com/</a> <a href="http://websta.me/tools">http://websta.me/tools</a><p>
+		<img src="img/sideblock.png">
+		
+</section>
+
+<section id="Loginpopup">
+	<h3 id="loginpopup"><strong>Login popup</strong></h3><hr class="notop">
+		<p>Login popup module is used to show the small login form from top header, the module needs to be added to position = top links and layout = all pages, additionally you can hide the default opencart login link from top header from customize theme > options > header<p>
+		<img src="img/loginpopup.png">
+		
+</section>
+
+<section id="Imagegallery">
+	<h3 id="imagegallery"><strong>Image gallery</strong></h3><hr class="notop">
+		<p>You can use this module to have a list of images displayed in a grid that when clicked opens a magnific popup instance with the images<p>
+		<img src="img/imagegallery.png">
+		
+</section>
+
+<section id="Parallax">
+	<h3 id="parallax"><strong>Parallax</strong></h3><hr class="notop">
+		<p>By default no menu is visible without megamenu configuration, in order to add a menu you need to add megamenu for layout = all pages and position = menu like in the image below<p>
+		<img src="img/parallax.png">
+		
+</section>
+
+<section id="Banner">
+	<h3 id="banner"><strong>Banner</strong></h3><hr class="notop">
+		<p>You can use banner module to show image or text banners, one or more per row<p>
+		<img src="img/banner.png">
+		
+</section>
+
+<section id="Backgroundslider">
+	<h3 id="backgroundslider"><strong>Background slider</strong></h3><hr class="notop">
+		<p>By default no menu is visible without megamenu configuration, in order to add a menu you need to add megamenu for layout = all pages and position = menu like in the image below<p>
+		<img src="img/backgroundslider.png">
+		
+</section>
+
+<section id="Cameraslider">
+	<h3 id="cameraslider"><strong>Camera slider</strong></h3><hr class="notop">
+		<p>Slider module based on  <a href="http://www.pixedelic.com/plugins/camera/">camera slider</a><p>
+		<img src="img/cameraslider.png">
+		
+</section>
+
+<section id="Flexslider">
+	<h3 id="flexslider"><strong>Flex slider</strong></h3><hr class="notop">
+		<p>Slider module based on  <a href="http://www.woothemes.com/flexslider/">flex slider</a><p>
+		<img src="img/flexslider.png">
+		
+</section>
+
+<section id="Floatingcart">
+	<h3 id="floatingcart"><strong>Floating cart</strong></h3><hr class="notop">
+		<p>Cart module displayed on the bottom of the screen that supports adding products with drag and drop <p>
+		<img src="img/floatingcart.png">
+		
+</section>
+
+
+<section id="Newsletter">
+<h3 id="newsletter"><strong>Newsletter</strong></h3><hr class="notop">
+		
+		<p>The newsletter module included with the theme works with mailchimp, in order to use it you need to enter your mailchimp api key, app name and mail list id like in the image below</p> 
+		<img src="img/newsletter.png">
+</section>   
+
+
+<section id="Testimonials">
+	<h3 id="testimonials"><strong>Testimonials</strong></h3><hr class="notop">
+		<p>Show customer testimonials<p>
+		<img src="img/testimonials.png">
+		
+</section>
+
+<section id="Textslider">
+	<h3 id="textslider"><strong>Textslider</strong></h3><hr class="notop">
+		<p>Headline rotator<p>
+		<img src="img/textslider.png">
+		
+</section>
+
+<section id="Customhtml">
+	<h3 id="customhtml"><strong>Custom html</strong></h3><hr class="notop">
+		<p>Add custom content, anything from raw html to youtube video embedded<p>
+		<img src="img/customhtml.png">
+		
+</section>
+
+<section id="Module_configuration">
+	<h3 id="module_configuration"><strong>Module grid configuration</strong></h3><hr class="notop">
+		<p>By default most modules take up an entire row when added to a page, by using <b>grid columns to occupy</b> you can make the module take less space, the theme uses a 12 columns grid, setting 6 for example will take half a row<p>
+		<p>You can have two or more modules side by side by setting grid columns = 6 (or different values so that both/all have a total of 12) and then add them on the same layout and set sorting order in increasing order so they can be next to each other</p>
+		<p>You can also use grid left offset to leave an empty space arround on the left of the module or grid elements spacing so that the module has no padding added arround itself</p>
+		<img src="img/gridconfig1.png">
+		
+</section>
+
+<section id="Module_filter">
+	<h3 id="module_filter"><strong>Module filter</strong></h3><hr class="notop">
+		<p>All theme modules have filter ability that you can use it to show the module on one layout only for a certain page<p>
+		<p>For example if you want to show one module only on about page, you can add the module on information layout (about us is shown using information layout)<br/> and then set <b>filter = information page</b> and <b>page id = 4</b> (about us has id 4, you can get page id from page url, about us url is <i>index.php?route=information/information&information_id=<b>4</b></i>)<p>
+		<p>This feature is mostly useful for image gallery, custom html, and custom products module</p>
+			
+		<img src="img/modulefilter1.png">
+		
+</section>
+
+<section id="Speedcache">
+	<h3 id="speedcache"><strong>Speed cache</strong></h3><hr class="notop">
+		<p>Speed cache module caches store pages bypassing all opencart code and database initialization making the page load instantly (page can be also slowed down from loading too many images/3rd party widgets)<p>
+		<p>You can install speed cache from <b>customize theme > sample data import > speed cache</b>, this is checked by default so if you already used import tool then speed cache is already installed.<p>
+		<p>Note: automatic install requires that index.php from opencart root folder is writable by php.<p>
+		<p>If you make changes to your store and the changes don't show on your store then this is probably caused by speed cache, you can clear speed cache page caching from <b>opencart admin > extensions > module control panel module > speed cache</b></p>
+		<img src="img/speedcache.png">
+		
+</section>
+
+
+<section id="Socialband">
+	<h3 id="socialband"><strong>Social band</strong></h3><hr class="notop">
+		<p>Social band has 3 columns, about, twitter feed column and facebook widget column, if one column has no content or facebook/twitter id configured then the column is hidden, you can use this to show only one of the columns.</p>
+		<p>You can configure social band from <b>opencart admin > extensions > module control panel module > social band</b><p>
+		<img src="img/socialband.png">
+		
+</section>
+
+
+<section id="Onepagecheckout">
+	<h3 id="onepagecheckout"><strong>One page checkout</strong></h3><hr class="notop">
+		<p>One page checkout can be configured to hide certain checkout fields and avoid second click for order confirmation for payment modules without additional input, you can find checkout configuration options in <b>opencart admin > extensions > module control panel module > checkout</b><p>
+		<img src="img/onepagecheckout.png">
+		
+</section>
+
+
+<section id="Patch">
+<h3 id="patch"><strong>Image patch (1.5.6)</strong></h3><hr class="notop">
+		
+		<p>For 2.x.x this is no longer necessary, ocmod is used to patch opencart code instead</p> 
+		<p>By default opencart adds a white band to images if the aspect ratio is different than image size set in the admin,</p> 
+		<p>if you don't want the white padding you can either install <a href="http://www.opencart.com/index.php?route=extension/extension/info&extension_id=7985">http://www.opencart.com/index.php?route=extension/extension/info&extension_id=7985</a> or you can patch opencart using the patch included in the download package.</p>
+		<p>To patch opencart choose the right folder for the opencart version you are using in <strong>image_patch</strong> folder from the zip archive and upload the two folders <strong>catalog</strong> and <strong>system</strong> to the root opencart folder like in the image below</p>
+		
+		<img src="img/patch.jpg" alt="Installation" />
+		
+</section>       
+
+
+<!--
+<section id="Description">
+	<h3 id="description"><strong>Description</strong></h3><hr class="notop">
+	<p>By default opencart has products description only on categories page, it dosen't have it in the featured, bestsellers or latest modules.</p>
+	<p>If you want to enable rollover description for products and show it also on featured, latest and bestsellers modules then you need to modify some of the opencart php files.</p>
+	<h4>Featured module</h4>
+	<p>Open the file <strong>catalog/controler/module/featured.php</strong> between line 55 and 56 you add this to the array</p>
+	<pre><strong>'description' => strip_tags(substr(html_entity_decode($product_info['description']), 0, 150))."...",</strong></pre>
+	<p>context code</p>
+	<pre>
+				$this->data['products'][] = array(
+					'product_id' => $product_info['product_id'],
+					'thumb'   	 => $image,
+					'name'    	 => $product_info['name'],
+					<strong>'description' => strip_tags(substr(html_entity_decode($product_info['description']), 0, 150))."...",</strong>
+					'price'   	 => $price,
+					'special' 	 => $special,
+					'rating'     => $rating,
+					'reviews'    => sprintf($this->language->get('text_reviews'), (int)$product_info['reviews']),
+					'href'    	 => $this->url->link('product/product', 'product_id=' . $product_info['product_id']),
+				);
+	</pre>
+
+	<h4>Latest module</h4>
+	<p>Open the file <strong>catalog/controler/module/latest.php</strong> between line 54 and 55 you add this to the array</p>
+	<pre><strong>'description' => strip_tags(substr(html_entity_decode($result['description']), 0, 80))."...",</strong></pre>
+	<p>context code</p>
+	<pre>
+			$this->data['products'][] = array(
+				'product_id' => $result['product_id'],
+				'thumb'   	 => $image,
+				'name'    	 => $result['name'],
+				<strong>'description' => strip_tags(substr(html_entity_decode($result['description']), 0, 80))."...",</strong>
+				'price'   	 => $price,
+				'special' 	 => $special,
+				'rating'     => $rating,
+				'reviews'    => sprintf($this->language->get('text_reviews'), (int)$result['reviews']),
+				'href'    	 => $this->url->link('product/product', 'product_id=' . $result['product_id']),
+			);
+	</pre>	
+	
+	<h4>Bestseller module</h4>
+	<p>Open the file <strong>catalog/controler/module/bestseller.php</strong> between line 47 and 48 you add this to the array</p>
+	<pre><strong>'description' => strip_tags(substr(html_entity_decode($result['description']), 0, 80))."...",</strong></pre>
+	<p>context code</p>
+	<pre>
+			$this->data['products'][] = array(
+				'product_id' => $result['product_id'],
+				'thumb'   	 => $image,
+				'name'    	 => $result['name'],
+				<strong>'description' => strip_tags(substr(html_entity_decode($result['description']), 0, 80))."...",</strong>				
+				'price'   	 => $price,
+				'special' 	 => $special,
+				'rating'     => $rating,
+				'reviews'    => sprintf($this->language->get('text_reviews'), (int)$result['reviews']),
+				'href'    	 => $this->url->link('product/product', 'product_id=' . $result['product_id']),
+			);	</pre>		
+	<hr>
+</section>
+
+
+<section id="CSS Files and Structure">
+	<h3 id="cssFiles"><strong>CSS Files and Structure</strong></h3><hr class="notop">
+	
+		<p>The list of css files that <script>document.write(theme_name)</script> theme uses:</p>
+		
+		<ol class="omega">
+		    
+		    
+		    <li>bootstrap.css</li>
+			<li>bootstrap.min.css</li>
+			<li>bootstrap-select.css</li>
+			<li>bootstrap-select.min.css</li>
+			<li>bootstrap-theme.css</li>
+			<li>bootstrap-theme.min.css</li>
+			<li>camera.css</li>
+			<li>cloud-zoom.css</li>
+			<li>default.css</li>
+			<li>flexslider.css</li>
+			<li>nivo-slider.css</li>
+			<li>style.css</li>
+
+		</ol>
+
+		<p>You can find all stylesheets inside <b>catalog > view > theme > <script>document.write(theme_name)</script> > css.</b></p> 
+
+		<hr>
+
+</section>
+
+<section id="JavaScript">
+	<h3 id="javascript"><strong>JavaScript</strong></h3><hr class="notop">
+	<p>Theme javascript files are located in <b>catalog/view/theme/<script>document.write(theme_name)</script>/js </b></p>
+		
+		<ol>
+			<li>bootstrap.js</li>
+			<li>bootstrap.min.js</li>
+			<li>bootstrap-select.js</li>
+			<li>bootstrap-select.min.js</li>
+			<li>camera.js</li>
+			<li>camera.min.js</li>
+			<li>cloud-zoom.1.0.3.js</li>
+			<li>cloud-zoom.css</li>
+			<li>jquery-1.10.2.min.js</li>
+			<li>jquery.autocomplete.js</li>
+			<li>jquery.easing.1.3.js</li>
+			<li>jquery.flexslider.js</li>
+			<li>jquery.flexslider-min.js</li>
+			<li>jquery.mobile.customized.min.js</li>
+			<li>main.js</li>
+		</ol>
+		  
+		<ul>
+			<li>This theme uses jQuery library 1.10.2</li>
+		</ul>
+		
+		<hr>
+		
+		<p>For further information about using OpenCart features, you can check <a href="http://docs.opencart.com/">opencart documentation</a> and <a href="http://www.opencart.com/index.php?route=documentation/screencast">opencart screencasts</a></p>
+</section>
+-->
+
+
+<section id="Faq">
+	<h3 id="faq"><strong>Faq</strong></h3><hr class="notop">
+
+
+		<a href="#" id="update"><strong>How to update theme?</strong></a><br/>
+		<ol>
+		<li> <b>Redownload latest theme version (last update)</b> <br/>First you need to redownload the theme from themeforest > downloads, downloading the theme will always give you the most recent update, you can view theme changelog on the bottom of product description.</li>
+		<li> <b>Overwrite old theme files</b> <br/>There is no special process to update theme just overwrite old theme files, if you made changes to theme files you can use <a href="http://meldmerge.org/">http://meldmerge.org/</a> to compare your theme folder with the latest update theme folder and merge the changes with a few clicks, if you use ftp I recommend using a reliable ftp client like https://filezilla-project.org/download.php to make sure that files are overwritten.</li>
+		<li> <b>Reinstall theme ocmods</b> <br/>Remove old theme ocmod from admin > extensions > modifications and upload the new ones from /ocmods folder inside theme zip from admin > extensions > modifications</li>
+		<li> <b>Refresh ocmods</b> <br/>After update you need to refresh modifications from opencart admin > extensions > modifications > refresh (blue button on top of the page)</li>
+		<li> <b>Clear speed cache</b> <br/> You can clear speed cache (if installed) from opencart admin > extensions > modules > speed cache</li>
+		</ol>
+
+		<a href="#" id="twitter"><strong>How to get twitter id for social band and side block?</strong></a><br/>
+		<p>Go to www.twitter.com and sign in as normal, go to your settings page.
+		Go to "Widgets" on the left hand side.
+		</p>
+
+		 <p>Create a new widget for what you need eg "user timeline" or "search" etc. 
+		 Feel free to check "exclude replies" if you dont want replies in results.
+			Now go back to settings page, and then go back to widgets page, you should
+		 see the widget you just created. Click edit.
+		</p>
+		
+		 <p>Now look at the URL in your web browser, you will see a long number like this:
+		 345735908357048478
+		 Use this as your twitter ID!		
+		 </p>
+
+		<a href="#" id="panel"><strong>How to hide customize theme panel?</strong></a><br/>
+		<p>Customize theme is shown only for opencart admin users, your customers never see it, if you want to also hide it for admin users edit <i>nico_theme_editor/editor.inc</i> and replace</p>
+
+		<code>
+		define('HAS_PERMISSION', $user->hasPermission('modify', 'design/layout'));
+		</code>
+		<br/>
+		with
+		<br/>
+		<code>
+		define('HAS_PERMISSION', false);
+		</code>
+
+		<br/>
+		<br/>
+		
+		<a href="#" id="modsec"><strong>Saving theme modules like megamenu in opencart admin gives 40x error</strong></a><br/>
+		<p>This can be caused by apache modsec module, megamenu uses large encoded strings on POST requests that triggers modsec.
+
+		You can disable modsec by adding
+		<br/>
+		<code>
+		&lt;IfModule mod_security.c&gt; SecFilterEngine Off SecFilterScanPOST Off &lt;/IfModule&gt;
+		</code>
+		<br/>
+		
+		in .htaccess in opencart admin folder, more info <a href="http://stackoverflow.com/questions/12928360/how-can-i-disable-mod-security-in-htaccess-file">http://stackoverflow.com/questions/12928360/how-can-i-disable-mod-security-in-htaccess-file</a> , depending on your hosting provided there might be other ways to disable modsec for opencart admin.
+		</p>
+
+
+		<a href="#" id="bug"><strong>I found a theme bug, what can I do?</strong></a><br/>
+		<p>
+			<strong>Check if running latest update</strong>
+			First thing to do is to make sure that you are using the latest theme update, go to theme page on theme forest and check <strong>Last update</strong> section to see if you downloaded the theme after the last update date if not then redownload the theme and update the files on your server. 
+		</p>
+		<p>
+			<strong>Check if the bug is not present also on opencart default theme</strong>
+			If the bug is still present after the update then make sure that is a theme bug by temporarily switching the theme to opencart default theme and check if the bug is still present after the change.
+		</p>
+		<p>
+			<strong>Send bug report only after checking last update and opencart default theme</strong>
+			If the bug is not showing for opencart default theme then this is either a misconfiguration or a theme bug, you can then post a comment on theme page comments section or send me a message using the contact page on themeforest.
+		</p>
+		<p>
+			<strong>Detailed bug description required</strong>
+			You will need to include the bug url and detailed steps to reproduce the bug along with opencart, php and browser version, if the bug is shown in the admin backend also temporary opencart admin access is required.
+		</p>
+</section>
+
+
+<section id="Support">
+	<h3 id="support"><strong>Support</strong></h3><hr class="notop">
+	<p>Themeforest support is provided only on item comments, to post your question please go to item page and click <b>comments tab</b>, comments section also has a search feature that can be used to search previous comments asked by other users.</p>
+
+	<p>Please note that free support is only provided for  <b>theme bugs and theme features questions </b>, customization requests are ignored, before submitting a new bug report please check that you are using the latest theme update and that the bug is indeed a theme bug by temporarily switching to opencart default theme to  <b>confirm that is not an opencart issue</b>.</p>
+
+	<p>You can check if you are using the latest theme update by checking <b>last update</b> section on <b>item page</b> on themeforest, if the date is after you downloaded the theme you need to redownload the theme and update the files on your server <a href="#update">How to update theme?</a></p>
+</section>
+
+
+<section id="Rating">
+	<h3 id="rating"><strong>Rating</strong></h3><hr class="notop">
+	<p>If you like the theme, don't forget to rate it.<br/>
+	Thanks.</p>
+	<img src="img/rate.png">
+	</p>
+</section>
+
+
+<!--section id="Sources and Credits">
+	<h3 id="credits"><strong>Sources and Credits</strong></h3><hr class="notop">
+    <p>I've used the following images, icons or other files as listed.
+		
+		<ul>
+			<li>Camera slider by <a href="http://www.pixedelic.com/">pixedelic</a></li>
+			<li>Flexslider by <a href="http://www.woothemes.com/flexslider/">woothemes</a></li>
+			<li>Bootstrap by <a href="http://getbootstrap.com/about/">@mdo and @fat</a></li>
+			<li>Product images by <a href="http://www.ikea.com">Ikea</a></li>
+		</ul>
+		
+		<hr>
+		<p>Thank you for purchasing my theme. 
+		I'd be glad to help you if you have any questions relating to this theme. 
+		If you have a more general question relating to the themes on ThemeForest, you might consider visiting the forums and asking your question in the "Item Discussion" section.</p> 
+</section -->
+
+	
+
+	</div>
+</body>
+<script>
+jQuery(document).ready(function () { 
+	jQuery("#documenter_nav a").each(function() 
+	{ 
+		console.log(this.hash);
+		for (i in hide_modules)
+		{
+			console.log(hide_modules[i]);
+			if (this.hash == "#" + hide_modules[i]) 
+			{
+				this.parentNode.remove();
+				jQuery("#" + hide_modules[i].charAt(0).toUpperCase() + hide_modules[i].slice(1)).remove();
+			}
+		}
+	});
+});
+
+document.createElement('section');var duration=500,easing='swing';
+
+obj=document.getElementsByTagName('object');
+for (var i=0; i<obj.length; ++i)
+  obj[i].outerHTML=obj[i].outerHTML;
+  
+  
+
+for (name in config)
+{
+	jQuery("#" + name).html(config[name]);
+	
+}
+</script>
+<script src="js/script.js"></script>
+</html>

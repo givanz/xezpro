@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<modification>
+    <name>Nico - Sale badge percentage precision</name>
+    <version>1.0</version>
+    <author>nicole_89</author>
+    <link>http://www.nicolette.ro</link>
+    <code>nico_sale_badge_percentage_precision</code>
+    <file path="catalog/controller/product/category.php">
+        <operation>
+            <search limit="1"><![CDATA[$price = $this->currency->format($this->tax->calculate($result['price'], $result['tax_class_id'], $this->config->get('config_tax')));]]></search>
+            <add position="replace"><![CDATA[$price = $this->currency->format($this->tax->calculate($result['price'], $result['tax_class_id'], $this->config->get('config_tax')));$_price = $this->tax->calculate($result['price'], $result['tax_class_id'], $this->config->get('config_tax'));]]></add>
+        </operation>
+        
+        <operation>
+            <search limit="1"><![CDATA[$price = $this->currency->format($this->tax->calculate($result['price'], $result['tax_class_id'], $this->config->get('config_tax')), $this->session->data['currency']);]]></search>
+            <add position="replace"><![CDATA[$price = $this->currency->format($this->tax->calculate($result['price'], $result['tax_class_id'], $this->config->get('config_tax')), $this->session->data['currency']);$_price = $this->tax->calculate($result['price'], $result['tax_class_id'], $this->config->get('config_tax'));]]></add>
+        </operation>
+
+        <operation>
+            <search limit="1"><![CDATA[$special = $this->currency->format($this->tax->calculate($result['special'], $result['tax_class_id'], $this->config->get('config_tax')));]]></search>
+            <add position="replace"><![CDATA[$special = $this->currency->format($this->tax->calculate($result['special'], $result['tax_class_id'], $this->config->get('config_tax')));$_special = $this->tax->calculate($result['special'], $result['tax_class_id'], $this->config->get('config_tax'));]]></add>
+        </operation>
+        
+        <operation>
+            <search limit="1"><![CDATA[$special = $this->currency->format($this->tax->calculate($result['special'], $result['tax_class_id'], $this->config->get('config_tax')), $this->session->data['currency']);]]></search>
+            <add position="replace"><![CDATA[$special = $this->currency->format($this->tax->calculate($result['special'], $result['tax_class_id'], $this->config->get('config_tax')), $this->session->data['currency']);$_special = $this->tax->calculate($result['special'], $result['tax_class_id'], $this->config->get('config_tax'));]]></add>
+        </operation>
+        
+        <operation>
+            <search limit="1"><![CDATA['price'       => $price,]]></search>
+            <add position="replace"><![CDATA['price'       => $price,
+				'_price'   	 => $_price,]]></add>
+        </operation>
+        
+        <operation>
+            <search limit="1"><![CDATA['special'     => $special,]]></search>
+            <add position="replace"><![CDATA['special'     => $special,
+				'_special'     => $_special,]]></add>
+        </operation>
+
+        <operation>
+            <search limit="1"><![CDATA[$price = false;]]></search>
+            <add position="replace"><![CDATA[$price = false;$price = false;]]></add>
+        </operation>
+
+        <operation>
+            <search limit="1"><![CDATA[$special = false;]]></search>
+            <add position="replace"><![CDATA[$special = false;$_special = false;]]></add>
+        </operation>
+    </file>  
+</modification>

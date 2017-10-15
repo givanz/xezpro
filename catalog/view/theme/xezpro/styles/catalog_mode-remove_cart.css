@@ -1,0 +1,9 @@
+#cart, .cart, .product-info .right .cart
+{
+	display:none !important;
+}
+
+div.product div.actions > button.btn, #button-cart, #buynow, #input-quantity
+{
+	display:none;
+}

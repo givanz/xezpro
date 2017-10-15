@@ -1,0 +1,14 @@
+.price, .box-product .price, .product-grid .price
+{
+	display:none !important;
+}
+
+#cart, .cart, .product-info .right .cart
+{
+	display:none !important;
+}
+
+div.product div.actions > button.btn, #button-cart, #buynow, #input-quantity, .currency
+{
+	display:none;
+}

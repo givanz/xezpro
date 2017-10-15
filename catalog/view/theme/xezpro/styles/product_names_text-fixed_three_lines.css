@@ -1,0 +1,25 @@
+.product .name a 
+{
+  padding: 0 5px;
+  white-space: normal;
+  max-height: 50px;
+  display:block;
+  overflow: hidden;
+}
+
+.product .name
+{
+    display:table;
+    width:100%;
+    vertical-align:middle;
+}
+
+.product .name div {
+  display: table-cell;
+  padding: 0 5px;
+  table-layout: fixed;
+  vertical-align: middle;
+  white-space: normal;
+  width: 100%;
+  height: 50px;
+}

@@ -1,0 +1,210 @@
+.header
+{
+	background:#333;
+	border: none;
+}
+
+.navbar .nav > li > a, .navbar .nav > li b, .navbar .nav > li.highlight > a
+{
+	color:#eee;
+}
+
+
+.navbar .nav > li:hover
+{
+	color:#333;
+	background:#fff;
+}
+.navbar .nav > li:hover, .navbar .nav > li:hover > a:hover
+{
+	color:#333;
+}
+
+.navbar .nav > li.dropdown:hover > a,.navbar .nav > li.dropdown.highlight:hover > a
+{
+	color:#333;
+	background:#fff;
+}
+
+.navbar .nav > li 
+{
+   border-left: 1px solid #444;
+   border-right: 1px solid #222;
+}
+
+.navbar .nav > li.highlight
+{
+	background:#444;
+}
+
+.btn:hover
+{
+   background-color:#009eff;
+}
+
+#newsletter,
+.btn-primary:hover, .btn.btn-primary:hover, .product .btn.btn-primary:hover, #button-confirm:hover, .button:hover
+{
+   background-color:#009eff;
+}
+
+.navbar-toggle .icon-bar
+{
+	background:#fff;
+}
+
+.heading h2, #logo a span{
+  color: #009eff;
+}
+
+.navbar .dropdown-menu > li > a:hover
+{
+		background:#009eff;
+}
+
+.navbar .nav > .active > a, .navbar .nav > .active > a:hover, .navbar .nav > .active > a:focus
+{
+	border-bottom:2px solid #009eff;
+}
+
+.left-menu > div.category_module ul li.active > a
+{
+	border-bottom:1px solid #009eff;
+}
+
+.product > div > div.hover > div > a > span
+{
+	background:#009eff;
+}
+
+.product .price p  
+{
+   color:#333;
+}
+
+.product .price .price-old
+{
+    color:#999;
+}  
+
+.fa.fa-star.star_rating
+{
+   color:#0fabf3;
+}
+
+.product .addcart a 
+{
+    background:#009eff;
+}
+
+.product-list .product .price p
+{
+    color:#0080c8;
+}
+
+#twitter_update_list a {
+    color: #009eff;
+}
+
+.show-login a 
+{
+   color:#009eff;
+}
+
+.your_order .radio:hover
+{
+   color:#009eff;
+}
+
+.controls a:hover
+{
+   color:#009eff;
+}
+
+.image-additional a:focus 
+{
+  outline: 1px dotted #009eff;
+}
+
+.product-info li a:hover
+{
+   color:#009eff;
+}
+
+.product-info #button-cart
+{
+     background:#009eff;
+}
+
+.tabs .nav-tabs > li.active > a, .heading h2
+{
+/*  background: none repeat scroll 0 0 #009eff;*/
+  color:#333;
+}
+/*
+.tab-pane a 
+{
+   color:#009eff;
+}
+*/
+.sitemap .subtitle a:hover
+{
+	color:#009eff;
+}
+
+.content-blog h3 a:hover
+{
+	color:#009eff;
+}
+.post-detail a 
+{
+	color:#009eff;
+}
+
+.text-blog a em:hover
+{
+	color:#009eff;
+}
+
+.col-post ul.post-menu li a:hover
+{
+	color:#009eff;
+}
+
+.col-post ul.tags a:hover
+{
+	background:#009eff; 
+}
+
+a.comment-reply-link
+{
+	color:#009eff;
+}
+
+.filters li:hover 
+{
+  background:#009eff;
+}
+
+.filters li.active {
+  background:#009eff;
+}
+
+.blog-item .readmore:hover
+{
+	background:#009eff;
+}
+
+
+div.sequence a.button
+{
+	color:#0fabf3;
+	border-color:#0fabf3;
+/*	background:#009eff;*/
+}
+
+
+.navbar .nav > li.highlight 
+{
+  background: rgba(255, 255,255, 0.15);
+}

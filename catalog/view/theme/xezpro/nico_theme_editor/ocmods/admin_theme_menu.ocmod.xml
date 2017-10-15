@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<modification>
+    <name>Nico - Admin theme integration</name>
+    <version>1.0</version>
+    <code>admin_theme_menu</code>
+    <author>nicole_89</author>
+    <link>http://www.nicolette.ro</link>
+    
+    
+
+    
+    <file path="admin/view/template/common/column_left.tpl">
+        <operation>
+            <search regex="true"><![CDATA[@</ul>\s*<div\s*id="stats">$@m]]></search>
+            <add position="before"><![CDATA[
+  </li><?php $opencart_version = (int)str_replace('.','',VERSION); if (!defined('NICO_THEME')) {define('NICO_THEME', 'Nico');} if (!isset($home) || empty($home)) $home = str_replace('?&', '?', preg_replace('@route=[^$&]*@', '',$_SERVER['REQUEST_URI']));?>
+  <li id="nicole"><a class="parent" style="background:#104da1;color:#fff;"><i class="fa fa-star fa-fw"></i> <span><?php echo $nico_theme = ucfirst(NICO_THEME);?></span></a>
+    <ul>
+      <li><a href="<?php echo $home; ?>&amp;route=extension/module/nicocontrolpanel"><?php echo $nico_theme;?> - Control panel</a></li>
+      <li><a href="<?php echo $home; ?>&amp;route=<?php if ($opencart_version >= 2300) {?>extension/extension<?php } else { ?>extension/module<?php }?>&amp;nico=true&amp;type=module"><?php echo $nico_theme;?> - Modules</a></li>
+      <li><a href="<?php echo $home; ?>&amp;route=<?php if ($opencart_version >= 2300) {?>extension/module<?php } else { ?>module<?php }?>/nicospeedcache/clear_speed_cache">Clear speed cache</a></li>
+      <li><a href="<?php echo $home; ?>&amp;route=<?php if ($opencart_version >= 2300) {?>extension/module<?php } else { ?>module<?php }?>/nicospeedcache/clear_opencart_cache">Clear opencart cache</a></li>
+      <!-- li><a target="_blank" href="http://<?php echo $nico_theme;?>.nicolette.ro/docs/index.html">Documentation</a></li>
+      <li><a target="_blank" href="http://nicolette.ro/faq.html">Theme FAQ</a></li -->
+    </ul>
+  </li>
+  </ul>
+  <div id="stats">]]></add>
+        </operation>
+    </file> 
+    
+    
+    <file path="admin/view/template/common/menu.tpl">
+        <operation>
+            <search regex="true"><![CDATA[@^</ul>\s*$|<?php } ?>\s+</ul>$@ms]]></search>
+            <add position="before"><![CDATA[
+  </li><?php if (!defined('NICO_THEME')) {define('NICO_THEME', 'Nico');} $opencart_version = (int)str_replace('.','',VERSION);?>
+  <li id="nicole"><a class="parent" style="background:#104da1;color:#fff;"><i class="fa fa-star fa-fw"></i> <span><?php echo $nico_theme = ucfirst(NICO_THEME);?></span></a>
+    <ul>
+      <li><a href="<?php echo $home; ?>&amp;route=module/nicocontrolpanel"><?php echo $nico_theme;?> - Control panel</a></li>
+      <li><a href="<?php echo $home; ?>&amp;route=<?php if ($opencart_version >= 2300) {?>extension/extension<?php } else { ?>extension/module<?php }?>&amp;nico=true&amp;type=module"><?php echo $nico_theme;?> - Modules</a></li>
+      <li><a href="<?php echo $home; ?>&amp;route=<?php if ($opencart_version >= 2300) {?>extension/module<?php } else { ?>module<?php }?>/nicospeedcache/clear_speed_cache">Clear speed cache</a></li>
+      <li><a href="<?php echo $home; ?>&amp;route=<?php if ($opencart_version >= 2300) {?>extension/module<?php } else { ?>module<?php }?>/nicospeedcache/clear_opencart_cache">Clear opencart cache</a></li>
+      <!-- li><a target="_blank" href="http://<?php echo $nico_theme;?>.nicolette.ro/docs/index.html">Documentation</a></li>
+      <li><a target="_blank" href="http://nicolette.ro/faq.html">Theme FAQ</a></li -->
+    </ul>
+  </li>
+</ul>]]></add>
+        </operation>
+    </file> 
+    
+
+    
+    
+    <file path="admin/controller/extension/module.php">
+        <operation>
+            <search><![CDATA[$extension = basename($file, '.php');]]></search>
+            <add position="before"><![CDATA[$extension = basename($file, '.php');if (isset($_GET['nico'])) if (strpos($extension, 'nico') === false) continue;]]></add>
+        </operation>
+    </file> 
+	<file path="admin/view/template/extension/module.tpl">
+	<operation>
+		<search index="0"><![CDATA[<td class="text-left"><?php echo $module['name']; ?></td>]]></search>
+		<add position="replace"><![CDATA[<td class="text-left">&ensp;&ensp;<a class="text-info" href="<?php echo $module['edit']; ?>"><span style="color:#555">&ensp;<?php echo str_replace(array('fa-inverse', 'fa fa-square fa-stack-2x', '104da1' , '&gt;'), array('','','ddd', ' &gt; </span>'), $module['name']); ?></a></td>]]></add>
+	</operation>
+	</file> 
+	
+	
+	<file path="admin/view/template/common/header.tpl">
+		<operation>
+			<search><![CDATA[
+		  	       <li><a href="<?php echo $logout; ?>"><span class="hidden-xs hidden-sm hidden-md"><?php echo $text_logout; ?></span> <i class="fa fa-sign-out fa-lg"></i></a></li>
+
+		  ]]>
+		  </search>
+			<add position="before"><![CDATA[
+				<li><a target="_blank" href="<?php 
+				
+				if (!defined('NICO_THEME')) define('NICO_THEME', 'Nico');
+
+				if(isset($this->request->get['product_id'])) {
+					echo HTTP_CATALOG .'index.php?route=product/product&product_id='.$this->request->get['product_id']."'";
+				} else{
+					echo HTTP_CATALOG;
+				}?>#nico_customize_theme"><span class="hidden-xs hidden-sm hidden-md">Store - <b><?php if (isset($nico_theme)) echo ucfirst($nico_theme);?></b> Customize theme</span> <i class="fa fa-home fa-lg"></i></a></li>
+		  ]]>
+		  </add>
+		</operation>
+	</file>
+
+
+    
+    <file path="admin/controller/extension/extension/module.php">
+        <operation>
+            <search><![CDATA[{extension/module,module}]]></search>
+            <add position="replace"><![CDATA[{extension/module}]]></add>
+        </operation>
+    </file>
+    <!-- file path="admin/controller/extension/extension/module.php">
+        <operation>
+            <search><![CDATA[$extension = basename($file, '.php');]]></search>
+            <add position="after"><![CDATA[
+				$path = 'extension/module/';
+				if  (preg_match('@controller/(.*/)[^/]*$@', $file, $matches))
+				{
+					$path = $matches[1];
+				}
+  		]]></add>
+        </operation>
+        <operation>
+            <search><![CDATA['edit'      => $this->url->link('extension/module/' . $extension, 'token=' . $this->session->data['token'] . '&module_id=' . $module['module_id'], true),]]></search>
+            <add position="replace"><![CDATA['edit'      => $this->url->link($path . $extension, 'token=' . $this->session->data['token'] . '&module_id=' . $module['module_id'], true),]]></add>
+        </operation>
+        <operation>
+            <search><![CDATA['edit'      => $this->url->link('extension/module/' . $extension, 'token=' . $this->session->data['token'], true)]]></search>
+            <add position="replace"><![CDATA['edit'      => $this->url->link($path . $extension, 'token=' . $this->session->data['token'], true)]]></add>
+        </operation>
+    </file --> 
+</modification>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<modification>
+    <name>Nico - Add image product option back (for oc 2.3.x)</name>
+    <version>1.0</version>
+    <author>nicole_89</author>
+    <link>http://www.nicolette.ro</link>
+    <code>image_product_option</code>
+
+	<!-- oc 2.3.x-->
+	<file path="admin/view/template/catalog/option_form.tpl">		
+		<operation>
+			<search><![CDATA[<optgroup label="<?php echo $text_choose; ?>">]]></search>
+			<add position="after"><![CDATA[                <?php if ($type == 'image') { ?>
+                <option value="image" selected="selected"><?php echo $text_image; ?></option>
+                <?php } else { ?>
+                <option value="image"><?php echo $text_image; ?></option>
+                <?php } ?>
+                ]]></add>
+		</operation>
+		<operation>
+			<search><![CDATA[if (this.value == 'select' || this.value == 'radio' || this.value == 'checkbox') {]]></search>
+			<add position="replace"><![CDATA[if (this.value == 'select' || this.value == 'radio' || this.value == 'checkbox' || this.value == 'image') {]]></add>
+		</operation>
+	</file>
+	
+	<file path="admin/controller/catalog/option.php">		
+		<operation>
+			<search><![CDATA[$data['text_checkbox'] = $this->language->get('text_checkbox');]]></search>
+			<add position="after"><![CDATA[$data['text_image'] = 'Image';]]></add>
+		</operation>
+		<operation>
+			<search><![CDATA[if ($option['type'] == 'select' || $option['type'] == 'radio' || $option['type'] == 'checkbox') {]]></search>
+			<add position="replace"><![CDATA[if ($option['type'] == 'select' || $option['type'] == 'radio' || $option['type'] == 'checkbox' || $option['type'] == 'image') {]]></add>
+		</operation>
+	</file>
+
+</modification>

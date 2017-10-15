@@ -1,0 +1,5 @@
+.product .name a {
+    overflow: auto;
+    white-space: normal;
+    padding:0px 5px;
+}

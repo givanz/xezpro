@@ -1,0 +1,32 @@
+form.navbar-search > div.input-group > button 
+{
+	background:#555 url("../img/search_white.png") no-repeat center;
+	padding: 20px 25px;
+	border-width: 2px 2px 2px medium;
+	border-color:#eee;
+	color: #fff;
+	border:none;
+}
+
+.navbar-search .search-query
+{
+    background:#555;
+	border-width: 2px medium 2px 2px;
+	border-color:#eee;
+	color: #fff;
+	border:none
+}
+
+.navbar-search .select 
+{
+	color: #fff;
+	border-color:#eee;
+	border-width: 2px medium;
+	background:#555 url("../img/dk_arrows_white.png") no-repeat scroll left 15px center;
+	border:none;
+}
+
+.navbar-search .select select
+{
+	border-color:transparent;
+}

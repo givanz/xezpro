@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<modification>
+    <name>Nico - Category page hover image</name>
+    <version>1.0</version>
+    <author>nicole_89</author>
+    <link>http://www.nicolette.ro</link>
+    <code>nico_category_products_hover_image</code>
+    <file path="catalog/controller/product/category.php">
+
+        <operation>
+            <search trim="true"><![CDATA[if ($this->customer->isLogged() || !$this->config->get('config_customer_price')) {]]></search>
+            <add position="replace"><![CDATA[
+			$product_images = $this->model_catalog_product->getProductImages($result['product_id']);
+			$additional_image = '';
+			if (isset($product_images[1]))
+			{
+
+				$width = $this->config->get('config_image_category_width');
+				$height = $this->config->get('config_image_category_height');
+				
+				if (!$width)
+				{
+					$width = $this->config->get($this->config->get('config_theme') . '_image_product_width');
+					$height = $this->config->get($this->config->get('config_theme') . '_image_product_height');
+				}
+				
+				$additional_image = $this->model_tool_image->resize($product_images[1]['image'],  $width, $height);
+			}
+
+			if ($this->customer->isLogged() || !$this->config->get('config_customer_price')) {
+		]]></add>
+        </operation>
+        
+        <operation>
+            <search trim="true"><![CDATA[if (($this->config->get('config_customer_price') && $this->customer->isLogged()) || !$this->config->get('config_customer_price')) {]]></search>
+            <add position="replace"><![CDATA[
+			$product_images = $this->model_catalog_product->getProductImages($result['product_id']);
+			$additional_image = '';
+			if (isset($product_images[1]))
+			{
+
+				$width = $this->config->get($this->config->get('config_theme') . '_image_product_width');
+				$height = $this->config->get($this->config->get('config_theme') . '_image_product_height');
+				
+				if (!$width)
+				{
+					$width = $this->config->get('config_image_category_width');
+					$height = $this->config->get('config_image_category_height');
+				}
+				
+				$additional_image = $this->model_tool_image->resize($product_images[1]['image'],  $width, $height);
+			}
+
+			if (($this->config->get('config_customer_price') && $this->customer->isLogged()) || !$this->config->get('config_customer_price')) {
+		]]></add>
+        </operation>
+
+
+        <operation>
+            <search trim="true" limit="1"><![CDATA['thumb'       => $image,]]></search>
+            <add position="replace"><![CDATA['thumb'       => $image,
+            'additional_image' 	 => $additional_image,]]></add>
+        </operation>
+    </file>  
+</modification>

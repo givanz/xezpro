@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<modification>
+    <name>Nico - Out of stock add to cart</name>
+    <version>1.0</version>
+    <code>out_of_stock</code>
+    <author>nicole_89</author>
+    <link>http://www.nicolette.ro</link>
+
+    <file path="catalog/controller/product/product.php">
+        <operation>
+            <search><![CDATA[if ($product_info['quantity'] <= 0) {]]></search>
+            <add position="before"><![CDATA[
+                $data['quantity'] = $product_info['quantity'];
+                $data['stock_status'] = $product_info['stock_status'];
+            ]]></add>
+        </operation>
+
+        <operation>
+            <search limit="1"><![CDATA[$price = $this->currency->format($this->tax->calculate($result['price'], $result['tax_class_id'], $this->config->get('config_tax')));]]></search>
+            <add position="replace"><![CDATA[$price = $this->currency->format($this->tax->calculate($result['price'], $result['tax_class_id'], $this->config->get('config_tax')));$_price = $this->tax->calculate($result['price'], $result['tax_class_id'], $this->config->get('config_tax'));]]></add>
+        </operation>
+
+        <operation>
+            <search limit="1"><![CDATA[$special = $this->currency->format($this->tax->calculate($result['special'], $result['tax_class_id'], $this->config->get('config_tax')));]]></search>
+            <add position="replace"><![CDATA[$special = $this->currency->format($this->tax->calculate($result['special'], $result['tax_class_id'], $this->config->get('config_tax')));$_special = $this->tax->calculate($result['special'], $result['tax_class_id'], $this->config->get('config_tax'));]]></add>
+        </operation>
+        
+        <operation>
+            <search limit="1"><![CDATA['price'       => $price,]]></search>
+            <add position="replace"><![CDATA['price'       => $price,
+				'_price'   	 => $_price,]]></add>
+        </operation>
+        
+        <operation>
+            <search limit="1"><![CDATA['special'     => $special,]]></search>
+            <add position="replace"><![CDATA['special'     => $special,
+				'_special'     => $_special,]]></add>
+        </operation>
+
+        <operation>
+            <search limit="1"><![CDATA[$price = false;]]></search>
+            <add position="replace"><![CDATA[$price = false;$_price = false;]]></add>
+        </operation>
+
+        <operation>
+            <search limit="1"><![CDATA[$special = false;]]></search>
+            <add position="replace"><![CDATA[$special = false;$_special = false;]]></add>
+        </operation>
+        
+        <operation>
+            <search limit="1"><![CDATA[$data['price'] = $this->currency->format($this->tax->calculate($product_info['price'], $product_info['tax_class_id'], $this->config->get('config_tax')));]]></search>
+            <add position="replace"><![CDATA[$data['price'] = $this->currency->format($this->tax->calculate($product_info['price'], $product_info['tax_class_id'], $this->config->get('config_tax')));$data['_price'] = $this->tax->calculate($product_info['price'], $product_info['tax_class_id'], $this->config->get('config_tax'));$data['currency_symbol_left'] = $this->currency->getSymbolLeft($this->config->get('config_currency'));$data['currency_symbol_right'] = $this->currency->getSymbolRight($this->config->get('config_currency'));]]></add>
+        </operation>
+
+        <operation>
+            <search limit="1"><![CDATA[$data['special'] = $this->currency->format($this->tax->calculate($product_info['special'], $product_info['tax_class_id'], $this->config->get('config_tax')));]]></search>
+            <add position="replace"><![CDATA[$data['special'] = $this->currency->format($this->tax->calculate($product_info['special'], $product_info['tax_class_id'], $this->config->get('config_tax')));$data['_special'] = $this->tax->calculate($product_info['special'], $product_info['tax_class_id'], $this->config->get('config_tax'));]]></add>
+        </operation>
+
+
+        <operation>
+            <search limit="1"><![CDATA[$data['price'] = false;]]></search>
+            <add position="replace"><![CDATA[$data['price'] = false;$data['_price'] = false;]]></add>
+        </operation>
+
+        <operation>
+            <search limit="1"><![CDATA[$data['special'] = false;]]></search>
+            <add position="replace"><![CDATA[$data['special'] = false;$data['_special'] = false;]]></add>
+        </operation>
+
+    </file> 
+
+
+    <file path="catalog/view/theme/*/template/product/product.tpl">
+        <operation>
+            <search><![CDATA[<button type="button" id="button-cart" data-loading-text="<?php if (isset($text_loading)) echo $text_loading;else echo 'loading ...' ?>" class="btn btn-primary button-cart"><?php echo $button_cart; ?></button>]]></search>
+            <add position="replace"><![CDATA[<?php if ($quantity < 1) { ?> 
+                <button type="button" id="button-cart"<?php if ($order_out_stock == false) {?> disabled="disabled" <?php }?>data-loading-text="<?php echo $text_loading; ?>" class="btn btn-primary button-cart"><?php echo $stock_status; ?></button>
+              <?php } else { ?>
+                <button type="button" id="button-cart" data-loading-text="<?php echo $text_loading; ?>" class="btn btn-primary button-cart"><?php echo $button_cart; ?></button>
+              <?php }?>]]></add>
+        </operation>
+    </file>  
+
+    <file path="catalog/controller/product/*.php|catalog/controller/module/featured.php|catalog/controller/module/latest.php">
+        <operation>
+            <search><![CDATA[$data['products'][] = array(]]></search>
+            <add position="after"><![CDATA['quantity'     => $result['quantity'],
+                'stock_status'     => $result['stock_status'],
+                ]]></add>
+        </operation>
+    </file> 
+</modification>

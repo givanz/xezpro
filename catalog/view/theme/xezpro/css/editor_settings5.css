@@ -1,0 +1,380 @@
+
+
+/* color - color-white-ffffff.css */
+
+.header
+{
+	background:#fff;
+	/*border:1px solid #eee;*/
+	border-radius:0px;
+	border-top:1px solid #eee;
+}
+
+.navbar .nav > li > a, .navbar .nav > li b, .navbar .nav > li.highlight > a
+{
+	color:#333;
+}
+
+
+.navbar .nav > li:hover
+{
+	color:#fff;
+	background:#555;
+}
+.navbar .nav > li:hover, .navbar .nav > li:hover > a:hover
+{
+	color:#333;
+}
+
+.navbar .nav > li.dropdown:hover > a,
+.navbar .nav > li.dropdown.highlight:hover > a
+{
+	color:#fff;
+	background:#333;
+}
+
+.navbar .nav > li 
+{
+    border-left: 1px solid #eee;
+    border-left: none;
+    border-right: 1px solid #eee;
+}
+
+.navbar .nav > li.highlight
+{
+	background:#fafafa;
+}
+
+
+ .navbar .nav > li b, .navbar .nav > li.highlight > a b
+{
+	color:#555;
+}
+
+.navbar .nav > li.dropdown.highlight:hover > a b
+{
+	color:#fff;
+}
+
+
+.navbar .dropdown-menu > li:hover > a:hover
+{
+	background-color:#333;
+}
+
+.btn:hover
+{
+   background-color:#333;
+}
+
+#newsletter,
+.btn-primary:hover, .btn.btn-primary:hover, .product .btn.btn-primary:hover, #button-confirm:hover, .button:hover
+{
+   background-color:#333;
+}
+
+.navbar-toggle .icon-bar
+{
+	background:#333;
+}
+
+.heading h2, #logo a {
+  color: #0080c8;
+}
+
+.navbar .dropdown-menu > li > a:hover
+{
+		background:#333;
+}
+
+.navbar .nav > .active > a, .navbar .nav > .active > a:hover, .navbar .nav > .active > a:focus
+{
+	border-bottom:2px solid #333;
+}
+
+.left-menu > div.category_module ul li.active > a
+{
+	border-bottom:1px solid #333;
+}
+
+.product > div > div.hover > div > a > span
+{
+	background:#333;
+	background:rgba(241, 89, 34,0.9);
+}
+
+/*
+.product .price p  
+{
+   color:#333;
+}
+
+.product .price .price-old
+{
+    color:#333;
+}  
+*/
+.product .addcart a 
+{
+    background:#333;
+}
+
+.product-list .product .price p
+{
+    color:#333;
+}
+
+#twitter_update_list a {
+    color: #333;
+}
+
+.show-login a 
+{
+   color:#333;
+}
+
+.your_order .radio:hover
+{
+   color:#333;
+}
+
+.controls a:hover
+{
+   color:#333;
+}
+
+.image-additional a:focus 
+{
+  outline: 1px dotted #333;
+}
+
+.product-info li a:hover
+{
+   color:#333;
+}
+
+/*.product-info #button-cart
+{
+     background:#333;
+}*/
+
+.tabs .nav-tabs > li.active > a 
+{
+  color: #333;
+}
+/*
+.tab-pane a 
+{
+   color:#333;
+}
+*/
+.sitemap .subtitle a:hover
+{
+	color:#333;
+}
+
+.content-blog h3 a:hover
+{
+	color:#333;
+}
+.post-detail a 
+{
+	color:#333;
+}
+
+.text-blog a em:hover
+{
+	color:#333;
+}
+
+.col-post ul.post-menu li a:hover
+{
+	color:#333;
+}
+
+.col-post ul.tags a:hover
+{
+	background:#333; 
+}
+
+a.comment-reply-link
+{
+	color:#333;
+}
+
+.filters li:hover 
+{
+  background:#333;
+}
+
+.filters li.active {
+  background:#333;
+}
+
+.blog-item .readmore:hover
+{
+	background:#333;
+}
+
+/*
+div.sequence a.button
+{
+	border-color:#333;
+	color:#333;
+	border-color:#333;
+	color:#333;
+}
+*/
+
+
+/* menu - menu-fullwidth-0094dc.css */
+
+
+
+/* main_menu - main_menu-fullwidth-0094dc.css */
+
+.header.container
+{
+	width:100%;
+}
+
+.navbar .nav > li:first-child
+{
+	border-radius:0px;
+}
+
+
+.navbar .nav > li.highlight
+{
+	/*background:rgba(0, 0, 0, 0.15);*/
+}
+
+
+.page-container
+{
+	margin:40px auto 0px;
+}
+
+.breadcrumb {
+    margin: 10px 0 0;
+}    
+
+div.sequence > .sequence-canvas .container .message-slide
+{
+    padding:0px 30px 20px;
+}
+
+div#header {
+    padding: 20px 0 30px;
+}
+
+
+/* slider_background - slider_background-blue-e7f4fa.css */
+
+div.sequence
+{
+	background:#e7f4fa;
+}
+
+
+/* header_background - header_background-dark_blue-104080.css */
+
+body, #top 
+{
+    background: #003065;
+    background: #104080;
+}
+    
+/*.heading h2, */
+#logo a {
+    color: #55d5ff;
+}
+
+#logo #text-logo a span {
+    color: #ffffff;
+}
+
+#logo #text_under_logo 
+{
+    color: #cccccc;
+}    
+
+
+.nav.cart > a > span {
+    background: #ffffff none repeat scroll 0 0;
+    border-radius: 3px;
+    color: #ffffff;
+}
+
+.nav.cart > a > span b {
+    color: #ffffff;
+}
+.nav.cart > a, #cart > button 
+{
+    background-image: url("../img/cart_white.png");        
+}    
+
+#top, #top a, .btn.btn-link 
+{
+    color: #aaaaaa;
+    border:none;
+}    
+
+
+form.navbar-search > div.input-group > button 
+{
+	background:transparent url("../img/search_white.png") no-repeat center;
+	border-width: 2px 2px 2px medium;
+	border-color:rgba(255,255,255, 0.5);
+	color: #fff;
+}
+
+.navbar-search .search-query
+{
+    background:transparent;
+	border-width: 2px medium 2px 2px;
+	border-color:rgba(255,255,255, 0.5);
+	color: #fff;
+}
+
+.navbar-search .select 
+{
+	color: #fff;
+	border-color:rgba(255,255,255, 0.5);
+	border-width: 2px medium;
+	background:transparent url("../img/dk_arrows_white.png") no-repeat scroll left 15px center
+}
+
+.navbar-search .select select
+{
+	border-color:transparent;
+}
+
+
+/* search_background -  */
+
+#language{display:block;}
+div.product div.actions button.btn{display:none;}
+#currency{display:block;}
+.product .actions div.rating{display:block;}
+#top-links .top-login{display:none;}
+#social_band{display:block;}
+#newsletter{display:block;}
+div.footer, div.footer.black{display:block;}
+.product-info .product_wish_compare{display:none;}
+body {;}
+
+.header-phone 
+{
+  color: #eee;
+  background-image:url(../img/phone_white.png);
+}
+
+.header-phone span {
+  color: #ccc;
+}
+
+#social_band
+{
+	display:none;
+}
