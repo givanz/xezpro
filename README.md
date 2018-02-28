@@ -7,4 +7,6 @@
 [Documentation](http://xezpro.nicolette.ro/docs/index.html) |
 [Download](https://github.com/givanz/xezpro/releases)
 
+For import samle data use *xezpro* as purchase key.
+
 <img src="http://xezpro.nicolette.ro/xezpro-screenshot.png">
